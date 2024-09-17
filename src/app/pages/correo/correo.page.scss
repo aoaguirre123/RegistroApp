@@ -1,0 +1,48 @@
+.color-fondo {
+  --background: #04142b;
+}
+
+.caja-credenciales {
+  --background: #042648;
+  border-radius: 30px;
+  position: fixed;
+  top: 50%;
+  left: 48%;
+  width: 80%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.boton-recuperar {
+  --background: #f6b01d;
+  color: white;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  width: 10rem;
+  
+}
+
+.cuenta-box {
+  --background: #042648;
+}
+
+.password-box {
+  --background: #042648;
+}
+
+.titulo-caja-credenciales {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  color: white;
+}
+
+.logo-login-duoc {
+  width: 70%;
+  margin: 0 auto;
+  position: fixed;
+  top: 15%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}

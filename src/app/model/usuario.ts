@@ -122,37 +122,44 @@ export class Usuario extends Persona {
     ]
   }
 
-  recibirUsuario(activatedRoute: ActivatedRoute, router: Router) {
-    activatedRoute.queryParams.subscribe(() => {
-      if (router.getCurrentNavigation()) {
-        const nav = router.getCurrentNavigation();
-        if (nav?.extras.state) {
-          this.cuenta = nav.extras.state['cuenta'];
-          this.correo = nav.extras.state['correo'];
-          this.password = nav.extras.state['password'];
-          this.preguntaSecreta = nav.extras.state['preguntaSecreta'];
-          this.respuestaSecreta = nav.extras.state['respuestaSecreta'];
-          this.nombre = nav.extras.state['nombre'];
-          this.apellido = nav.extras.state['apellido'];
-          this.nivelEducacional = nav.extras.state['nivelEducacional'];
-        }
-      }
-    });
+  public buscarUsuarioPorCorreo(correo: string): Usuario | undefined {
+    return Usuario.getListaUsuarios().find(
+      usu => usu.correo === correo);
   }
+  
+  // recibirUsuario(activatedRoute: ActivatedRoute, router: Router) {
+  //   activatedRoute.queryParams.subscribe(() => {
+  //     if (router.getCurrentNavigation()) {
+  //       const nav = router.getCurrentNavigation();
+  //       if (nav?.extras.state) {
+  //         this.cuenta = nav.extras.state['cuenta'];
+  //         this.correo = nav.extras.state['correo'];
+  //         this.password = nav.extras.state['password'];
+  //         this.preguntaSecreta = nav.extras.state['preguntaSecreta'];
+  //         this.respuestaSecreta = nav.extras.state['respuestaSecreta'];
+  //         this.nombre = nav.extras.state['nombre'];
+  //         this.apellido = nav.extras.state['apellido'];
+  //         this.nivelEducacional = nav.extras.state['nivelEducacional'];
+  //       }
+  //     }
+  //   });
+  // }
 
-  navegarEnviandoUsuario(router: Router, pagina: string) {
-    let navigationExtras: NavigationExtras = {
-      state: {
-        cuenta: this.cuenta,
-        password: this.password,
-        correo: this.correo,
-        preguntaSecreta: this.preguntaSecreta,
-        respuestaSecreta: this.respuestaSecreta,
-        nombre: this.nombre,
-        apellido: this.apellido,
-        nivelEducacional: this.nivelEducacional,
-      }
-    };
-    router.navigate([pagina], navigationExtras)
-  }
+  // navegarEnviandoUsuario(router: Router, pagina: string) {
+  //   let navigationExtras: NavigationExtras = {
+  //     state: {
+  //       cuenta: this.cuenta,
+  //       password: this.password,
+  //       correo: this.correo,
+  //       preguntaSecreta: this.preguntaSecreta,
+  //       respuestaSecreta: this.respuestaSecreta,
+  //       nombre: this.nombre,
+  //       apellido: this.apellido,
+  //       nivelEducacional: this.nivelEducacional,
+  //     }
+  //   };
+  //   router.navigate([pagina], navigationExtras)
+  // }
+
+
 }

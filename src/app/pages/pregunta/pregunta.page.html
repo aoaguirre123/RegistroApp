@@ -1,0 +1,47 @@
+<ion-content [fullscreen]="true" class="color-fondo">
+  <div class="logo-login-duoc">
+    <img src="../../../assets/img/logo-fondoazul.png" />
+    <h4 style="text-align: center; font-weight: 500; padding-right: 5%">
+      Sistema de Asistencia DUOC
+    </h4>
+  </div>
+
+  <ion-card class="ion-padding-vertical caja-credenciales">
+    <ion-card-content style="text-align: center">
+      <ion-label style="color: #f6b01d; font-weight: bolder; font-size: medium">
+        Recuperar Contraseña
+      </ion-label>
+
+      <ion-card-content style="text-align: center; font-size: 15px">
+        <ion-label class="titulo-caja-credenciales">
+          Paso 2: Responde la pregunta secreta.
+        </ion-label>
+      </ion-card-content>
+
+      <ion-label>{{usuario.nombre}} {{usuario.apellido}} </ion-label>
+      <br>
+      <ion-label>{{usuario.preguntaSecreta}} </ion-label>
+
+      <ion-item class="cuenta-box">
+        <ion-input [(ngModel)]="respuesta"
+          labelPlacement="floating"
+          label="Ingresa tu respuesta"
+          placeholder="Escribe aqui tu respuesta"
+        ></ion-input>
+      </ion-item>
+    </ion-card-content>
+
+    <ion-button   (click)="validarRespuestaSecreta()" class="boton-recuperar" shape="round" style="margin-top: 15px">
+      <ion-label>Recuperar Contraseña</ion-label>
+    </ion-button>
+
+
+
+    <ion-card-content
+      style="text-align: center; margin-top: 10px; color: #2f41de"
+    >
+      <ion-label (click)="iraingreso()">Iniciar Sesion</ion-label>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+

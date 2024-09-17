@@ -50,4 +50,8 @@ export class IngresoPage {
     toast.present();
   }
 
+  public iracorreo(): void {
+    this.router.navigate(['/correo']);
+  }
+
 }

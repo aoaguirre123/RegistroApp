@@ -11,22 +11,7 @@ export class IncorrectoPage implements OnInit {
 
   public usuario: Usuario = new Usuario();
 
-  constructor(
-    private router: Router,
-    private activatedRoute: ActivatedRoute
-  )
-  {
-    this.activatedRoute.queryParams.subscribe(params => {
-      const nav = this.router.getCurrentNavigation();
-      if (nav) {
-        if (nav.extras.state) {
-          this.usuario = nav.extras.state['usuario'];
-          return;
-        }
-        this.router.navigate(['/ingreso']);
-      }
-    });
-  }
+  constructor(private router: Router,){}
 
   navegarIngreso() {
     this.router.navigate(['/ingreso']);
