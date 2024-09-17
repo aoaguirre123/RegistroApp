@@ -1,0 +1,94 @@
+<ion-toolbar color="." style="padding-top: 10px;">
+  <div class="ion-padding-horizontal ion-text-center" style="display: flex; align-items: center;">
+    <ion-icon name="chevron-back-outline" size="large" (click)="navegarInicio()" style="position: fixed;"></ion-icon>
+    <div>
+      <img src="../../../assets/img/logo-fondoazul.png" style="width: 50%; height: 0%;">
+    </div>
+  </div>
+</ion-toolbar>
+
+<ion-content [fullscreen]="true" class="color-fondo" >
+  <ion-card class="ion-padding-vertical caja-credenciales">
+    
+    <ion-toolbar class="box-color">
+      <h2 class="ion-text-center">
+        ¡Bienvenido(a) {{ usuario.nombre }} {{ usuario.apellido }}!
+      </h2>
+    </ion-toolbar>
+    <ion-toolbar class="box-color">
+      <p class="ion-text-center"  style="font-size: 1rem; font-weight: lighter;">
+
+        Datos personales
+      </p>
+    </ion-toolbar>
+    
+    <div class="ion-padding-vertical ion-padding-horizontal">
+
+      <ion-item #itemCuenta class="box-color">
+        <ion-input [(ngModel)]="usuario.cuenta"
+            label="Cuenta" labelPlacement="floating"
+            placeholder="Ej: atorres" style="color: white;"></ion-input>
+      </ion-item>
+  
+      <ion-item #itemNombre class="box-color">
+        <ion-input [(ngModel)]="usuario.nombre" 
+            label="Nombre" labelPlacement="floating"
+            placeholder="Ej: Ana" style="color: white;"></ion-input>
+      </ion-item>
+  
+      <ion-item #itemApellido class="box-color" >
+        <ion-input [(ngModel)]="usuario.apellido"
+            label="Apellido" labelPlacement="floating"
+            placeholder="Ej: Torres" style="color: white;"></ion-input>
+      </ion-item>
+  
+      <ion-item #itemEducacion class="box-color">
+        <ion-label position="floating" class="font-size-16" style="color: white;">Educación</ion-label>
+        <ion-select placeholder="Seleccione nivel" 
+            [(ngModel)]="usuario.nivelEducacional!.id" style="color: whitesmoke;">
+          <ion-select-option *ngFor="let nivelEducacional of listaNivelesEducacionales" 
+            [value]="nivelEducacional.id">
+              {{nivelEducacional.nombre}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+  
+      <ion-item #itemFechaNacimiento class="box-color">
+        <table>
+          <tr>
+            <td class="font-size-12" style="color: white;">
+              Fecha de Nacimiento
+            </td>
+            <td class="cell-align-right">
+              <input 
+                matInput 
+                [matDatepicker]="fechaNacimiento" 
+                [(ngModel)]="usuario.fechaNacimiento"
+                placeholder="dd/mm/yyyy"
+                class="date-width" style="color: black; background-color: white;">
+            </td>
+            <td class="cell-width-0">
+              <mat-datepicker-toggle matSuffix [for]="fechaNacimiento"></mat-datepicker-toggle>
+              <mat-datepicker #fechaNacimiento></mat-datepicker>
+            </td>
+          </tr>
+        </table>
+      </ion-item>
+
+      <ion-item class="box-color">
+        <ion-input style="color: white;" [(ngModel)]="usuario.password" labelPlacement="floating" type="password" label="Contraseña" placeholder="Ej: 123456"></ion-input>
+      </ion-item>
+  
+      <div class="div-button">
+        <ion-button (click)="logout()" expand="full" shape="round " color="danger" style="margin-right: 5px;">
+          <ion-icon slot="start" name="log-out-outline"></ion-icon>
+          Cerrar sesion
+        </ion-button>
+        <ion-button (click)="guardarDatos()" expand="full" shape="round" style="margin-left: 5px;">
+          <ion-icon slot="start" name="save-outline"></ion-icon>
+          Guardar Datos
+        </ion-button>
+      </div>
+    </div>
+  </ion-card>
+</ion-content>

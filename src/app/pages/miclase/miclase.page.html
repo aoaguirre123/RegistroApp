@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title #titulo class="font-size-18">
+      Sistema de Asistencia DUOC / Mi clase
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<div class="book">
+  <ion-content [fullscreen]="true" #page class="ion-padding-horizontal page">
+
+    <ion-toolbar class="ion-padding-top">
+      <h1 class="ion-text-center">
+        ¡Bienvenido(a) {{ usuario.nombre }} {{ usuario.apellido }}!
+      </h1>
+    </ion-toolbar>
+
+    <ion-button *ngIf="!escaneando" (click)="comenzarEscaneoQR()" expand="full" shape="round">
+      <ion-icon slot="start" name="videocam-outline"></ion-icon>
+      Comenzar Escaneo de QR
+    </ion-button>
+
+    <ion-button *ngIf="escaneando" (click)="detenerEscaneoQR()" expand="full" shape="round">
+      <ion-icon slot="start" name="stop-circle-outline"></ion-icon>
+      Detener escaneo de QR
+    </ion-button>
+
+    <ion-button (click)="limpiarDatos()" expand="block" expand="full" shape="round">
+      <ion-icon slot="start" name="trash-outline"></ion-icon>
+      Limpiar datos
+    </ion-button>
+
+    <video #video [hidden]="!escaneando" width="100%"></video>
+    <canvas #canvas hidden></canvas>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Codigo QR</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <br>
+        Datos: {{ datosQR }}
+        <br>
+        escaneando: {{ escaneando }}
+      </ion-card-content>
+    </ion-card>
+
+  </ion-content>
+</div>
