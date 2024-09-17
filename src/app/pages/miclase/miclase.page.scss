@@ -90,3 +90,31 @@ main {
   overflow-x: hidden;
 }
 
+.logo-inicio-duoc {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.color-fondo {
+  --background:  #04142b  ;
+}
+
+.box-color {
+  --background: #042648
+}
+
+p {
+  color: white;
+  font-size: medium;
+}
+
+h4 {
+  right: 20px;
+  font-size: medium;
+}
+
+.caja-credenciales {
+  --background: #042648;
+  border-radius: 30px;
+
+}
