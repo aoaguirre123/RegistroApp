@@ -126,7 +126,10 @@ export class MiclasePage implements OnInit, AfterViewInit {
       }
       if (this.obtenerDatosQR()) {
         console.log('Datos Obtenidos');
-        this.router
+        // Dejar de usar la camara una vez escaneado el QR
+        let stream = this.video.nativeElement.srcObject;
+        let tracks = stream.getTracks();
+        tracks.forEach((track: { stop: () => any; }) => track.stop());
       } else {
         if (this.escaneando) {
           console.log('Escaneando...');
@@ -141,6 +144,9 @@ export class MiclasePage implements OnInit, AfterViewInit {
 
   public detenerEscaneoQR(): void {
     this.escaneando = false;
+    let stream = this.video.nativeElement.srcObject;
+    let tracks = stream.getTracks();
+    tracks.forEach((track: { stop: () => any; }) => track.stop());
   }
 
   public limpiarDatos(): void{

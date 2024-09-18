@@ -116,5 +116,13 @@ h4 {
 .caja-credenciales {
   --background: #042648;
   border-radius: 30px;
+  width: 80%;
+}
 
+.boton {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  text-align: center;
+  width: 80%;
 }
