@@ -8,54 +8,40 @@
 <ion-content [fullscreen]="true" class="color-fondo">
   <div class="logo-inicio-duoc">
     <ion-icon name="chevron-back-outline" size="large" (click)="navegarInicio()" style="position: fixed; color: white; margin-top: 50px; margin-left: -50px;"></ion-icon>
-    <img src="../../../assets/img/logo-fondoazul.png">
+    <img src="../../../assets/img/logo-fondoazul.png" alt="">
   </div>
   <h1 style="color: white;" class="ion-text-center">
     ¡Bienvenido(a) {{ usuario.nombre }} {{ usuario.apellido }}!
   </h1>
   <br >
   <div>
-    <ion-card class="caja-credenciales" style="margin: 0 auto;" *ngIf="!escaneando">
+    <ion-card class="caja-credenciales" style="margin: 0 auto;">
       <ion-card-header>
         <ion-card-title class="ion-text-center">Código QR</ion-card-title>
       </ion-card-header>
       <ion-card-content>
         <br>
         
-        <p>Sede:  <strong> {{ datosQR?.sede }} </strong> </p>
-        <p>Sigla: <strong>{{ datosQR?.idAsignatura }}</strong></p>
-        <p>Sección: <strong>{{ datosQR?.seccion }}</strong></p>
-        <p>Asignatura: <strong>{{ datosQR?.nombreAsignatura }}</strong></p>
-        <p>Profesor: <strong>{{ datosQR?.nombreProfesor }}</strong></p>
-        <p>Día: <strong>{{ datosQR?.dia }}</strong></p>
-        <p>Bloque de Inicio: <strong>{{ datosQR?.bloqueInicio }}</strong></p>
-        <p>Bloque de termino: <strong>{{ datosQR?.bloqueTermino }}</strong></p>
-        <p>Inicia: <strong>{{ datosQR?.horaInicio }}</strong></p>
-        <p>Termino: <strong>{{ datosQR?.horaFin }}</strong></p>
+        <p>Sede:  <strong> {{ usuario.asistencia!.sede }} </strong> </p>
+        <p>Sigla: <strong>{{ usuario.asistencia!.idAsignatura }}</strong></p>
+        <p>Sección: <strong>{{ usuario.asistencia!.seccion }}</strong></p>
+        <p>Asignatura: <strong>{{ usuario.asistencia!.nombreAsignatura }}</strong></p>
+        <p>Profesor: <strong>{{ usuario.asistencia!.nombreProfesor }}</strong></p>
+        <p>Día: <strong>{{ usuario.asistencia!.dia }}</strong></p>
+        <p>Bloque de Inicio: <strong>{{ usuario.asistencia!.bloqueInicio }}</strong></p>
+        <p>Bloque de termino: <strong>{{ usuario.asistencia!.bloqueTermino }}</strong></p>
+        <p>Inicia: <strong>{{ usuario.asistencia!.horaInicio }}</strong></p>
+        <p>Termino: <strong>{{ usuario.asistencia!.horaFin }}</strong></p>
         
         <br>
       </ion-card-content>
     </ion-card>
-    <div style="padding: 15px; border-radius: 20px;">
-      <video #video [hidden]="!escaneando" width="100%"></video>
-      <canvas #canvas hidden></canvas>
-    </div>
-    <div style="margin-top: 10px;">
-      <ion-button class="boton" *ngIf="!escaneando" (click)="comenzarEscaneoQR()" style="--background: #e3a21b;" expand="full" shape="round">
-        <ion-icon slot="start" name="videocam-outline"></ion-icon>
-        Comenzar Escaneo de QR
-      </ion-button>
-
-      <ion-button class="boton" *ngIf="escaneando" (click)="detenerEscaneoQR()" expand="full" shape="round" style="--background: #ff3838;">
-        <ion-icon slot="start" name="stop-circle-outline"></ion-icon>
-        Detener escaneo de QR
-      </ion-button>
-      
-      <ion-button class="boton" *ngIf="!escaneando" (click)="limpiarDatos()" expand="full" shape="round">
+    <!-- <div style="margin-top: 10px;">
+      <ion-button class="boton" (click)="limpiarDatos()" expand="full" shape="round">
         <ion-icon slot="start" name="trash-outline"></ion-icon>
         Limpiar datos
       </ion-button>
-    </div>
+    </div> -->
   </div>
   
 

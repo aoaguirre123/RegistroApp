@@ -9,7 +9,7 @@
 <ion-content [fullscreen]="true" class="color-fondo">
   <div class="logo-inicio-duoc">
     <div>
-      <img src="../../../assets/img/logo-fondoazul.png">
+      <img src="../../../assets/img/logo-fondoazul.png" alt="">
     </div>
     <ion-card #card style="border-radius: 30px; width: 80%; margin: 0 auto;">
       <ion-card-content><h1 style="color: white; text-align: center; font-weight: bold;">¡Bienvenido(a)!</h1></ion-card-content>
@@ -31,8 +31,23 @@
       </ion-label>
       <ion-icon slot="start" name="person-outline"></ion-icon>
     </ion-button>
-    <br><br><br><br><br><br><br><br><br>
-    <ion-button class="miclase-button " shape="round" style="--background: #ff3838;"  (click)="logout()">
+    <div style="padding: 10px; margin: 15px; border-radius: 20px; background-color: #04142b;" [hidden]="!escaneando">
+      <video #video [hidden]="!escaneando" width="100%" style="border-radius: 20px;"></video>
+      <canvas #canvas hidden></canvas>
+      <ion-button class="" *ngIf="escaneando" (click)="detenerEscaneoQR()" expand="full" shape="round" style="--background: #ff3838;">
+        <ion-icon slot="start" name="stop-circle-outline"></ion-icon>
+        <ion-label>
+          Detener escaneo de QR
+        </ion-label>
+      </ion-button>
+    </div>
+    <ion-button class="miclase-button" *ngIf="!escaneando" shape="round" (click)="comenzarEscaneoQR()" style="margin-top: 8px;">
+      <ion-label>
+        Escanear QR
+      </ion-label>
+      <ion-icon slot="start" name="qr-code-outline"></ion-icon>
+    </ion-button>
+    <ion-button class="miclase-button " shape="round" style="--background: #ff3838; margin-top: 8px;"  (click)="logout()">
       <ion-label>
         Cerrar Sesión
       </ion-label>
@@ -41,4 +56,4 @@
     <br>
   </ion-card>
 
-</ion-content>
+</ion-content>X

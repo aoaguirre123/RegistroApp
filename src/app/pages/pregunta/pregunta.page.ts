@@ -1,3 +1,4 @@
+import { Asistencia } from './../../interfaces/asistencia';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { Usuario } from 'src/app/model/usuario';
@@ -10,8 +11,6 @@ import { Usuario } from 'src/app/model/usuario';
 })
 export class PreguntaPage implements OnInit {
 
-
-
   public usuario: Usuario = new Usuario();
   public respuesta: string = '';
 
@@ -21,44 +20,36 @@ export class PreguntaPage implements OnInit {
     private router: Router
   )
   {
-    this.activatedRoute.queryParams.subscribe(params => {
-      const nav = this.router.getCurrentNavigation();
-      if (nav) {
-        if (nav.extras.state) {
-          this.usuario = nav.extras.state['usuario'];
-          return;
-        }
-        this.router.navigate(['/ingreso']);
-      }
-    });
+    this.usuario.recibirPregunta(this.activatedRoute, this.router)
   }
 
-  public iraingreso(): void {
-
-    this.router.navigate(['/ingreso']);
-
+  navegar(pagina: string) {
+    this.usuario.navegarEnviandoUsuario(this.router, pagina);
   }
 
     ngOnInit() {
   }
 
-
-
   public validarRespuestaSecreta(): void {
-
-    const usuario = new Usuario();
-
     if (this.usuario.respuestaSecreta === this.respuesta) {
       const navigationExtras: NavigationExtras = {
         state: {
-          usuario: this.usuario
+          cuenta: this.usuario.cuenta,
+          listaUsuarios: this.usuario.listaUsuarios,
+          asistencia: this.usuario.asistencia
         }
       }
       this.router.navigate(['/correcto'], navigationExtras);
     }
     else {
-      
-      this.router.navigate(['/incorrecto']);
+      const navigationExtras: NavigationExtras = {
+        state: {
+          cuenta: this.usuario.cuenta,
+          listaUsuarios: this.usuario.listaUsuarios,
+          asistencia: this.usuario.asistencia
+        }
+      }
+      this.router.navigate(['/incorrecto'], navigationExtras);
     }
   }
 

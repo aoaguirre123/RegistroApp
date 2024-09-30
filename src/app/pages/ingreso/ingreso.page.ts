@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { Router, NavigationExtras, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { ToastController } from '@ionic/angular';
-import { NivelEducacional } from 'src/app/model/nivel-educacional';
 import { Usuario } from 'src/app/model/usuario';
+
 
 @Component({
   selector: 'app-ingreso',
@@ -15,31 +15,24 @@ export class IngresoPage {
 
   constructor(
       private router: Router
+    , private activatedRoute: ActivatedRoute
     , private toastController: ToastController) 
   {
     this.usuario = new Usuario();
     this.usuario.cuenta = 'atorres';
     this.usuario.password = '1234';
+    this.usuario.recibirUsuarioIngreso(this.activatedRoute, this.router);
   }
 
-  public ingresar(): void {
-
+  ingresar() {
     const error = this.usuario.validarUsuario();
     if(error) {
       this.mostrarMensajeEmergente(error);
       return;
     } 
-    const usu: Usuario | undefined = Usuario.buscarUsuarioValido(this.usuario.cuenta, this.usuario.password);
-
-    if (usu) {
-      const navigationExtras: NavigationExtras = {
-        state: {
-          usuario: usu
-        }
-      };
-      this.mostrarMensajeEmergente('¡Bienvenido(a) al Sistema de Asistencia DUOC!');
-      this.router.navigate(['/inicio'], navigationExtras);
-    }
+    this.mostrarMensajeEmergente('¡Bienvenido(a) al Sistema de Asistencia DUOC!');
+    this.usuario.asistencia = this.usuario.asistenciaVacia();
+    this.usuario.navegarEnviandoUsuario(this.router, '/inicio');
   }
 
   async mostrarMensajeEmergente(mensaje: string, duracion?: number) {
@@ -50,8 +43,8 @@ export class IngresoPage {
     toast.present();
   }
 
-  public iracorreo(): void {
-    this.router.navigate(['/correo']);
+  navegar(pagina: string) {
+    this.usuario.navegarEnviandoListaUsuarios(this.router, pagina);
   }
 
 }

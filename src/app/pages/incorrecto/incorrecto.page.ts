@@ -9,12 +9,19 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class IncorrectoPage implements OnInit {
 
-  public usuario: Usuario = new Usuario();
+  public usuario: Usuario;
 
-  constructor(private router: Router,){}
+  constructor(
+    private router: Router, 
+    private activatedRoute: ActivatedRoute
+  )
+  {
+    this.usuario = new Usuario();
+    this.usuario.recibirUsuario(this.activatedRoute, this.router);
+  }
 
   navegarIngreso() {
-    this.router.navigate(['/ingreso']);
+    this.usuario.navegarEnviandoListaUsuarios(this.router, '/ingreso');
   }
 
   ngOnInit() {

@@ -1,7 +1,5 @@
 import { Component,  OnInit } from '@angular/core';
 import { Router, NavigationExtras, ActivatedRoute } from '@angular/router';
-import { ToastController } from '@ionic/angular';
-import { NivelEducacional } from 'src/app/model/nivel-educacional';
 import { Usuario } from 'src/app/model/usuario';
 
 
@@ -12,14 +10,19 @@ import { Usuario } from 'src/app/model/usuario';
 })
 
 export class CorreoPage implements OnInit{
-  public correo: string = '';
+  public usuario: Usuario;
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router
+    , private activatedRoute: ActivatedRoute
+  ) 
+  {
+    this.usuario = new Usuario();
+    this.usuario.recibirListaUsuarios(this.activatedRoute, this.router);
+  }
 
-  public iraingreso(): void {
-
-    this.router.navigate(['/ingreso']);
-
+  navegar(pagina: string) {
+    this.usuario.navegarEnviandoUsuario(this.router, pagina);
   }
   
   ngOnInit() {
@@ -27,18 +30,11 @@ export class CorreoPage implements OnInit{
 
 
   public ingresarPaginaValidarRespuestaSecreta(): void {
-    const usuario = new Usuario();
-    const usuarioEncontrado = usuario.buscarUsuarioPorCorreo(this.correo);
-    if (!usuarioEncontrado) {
-      alert('EL CORREO NO EXISTE DENTRO DE LAS CUENTAS VALIDAS DEL SISTEMA');
+    if (!this.usuario.buscarUsuarioPorCorreo(this.usuario.correo)) {
+      this.usuario.navegarEnviandoListaUsuarios(this.router, '/incorrecto');
     }
     else {
-      const navigationExtras: NavigationExtras = {
-        state: {
-          usuario: usuarioEncontrado
-        }
-      };
-      this.router.navigate(['/pregunta'], navigationExtras);
+      this.usuario.navegarPregunta(this.router);
     }
   }
 

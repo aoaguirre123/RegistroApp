@@ -16,20 +16,11 @@ export class CorrectoPage implements OnInit {
     private activatedRoute: ActivatedRoute,
   )
   { 
-    this.activatedRoute.queryParams.subscribe(params => {
-      const nav = this.router.getCurrentNavigation();
-      if (nav) {
-        if (nav.extras.state) {
-          this.usuario = nav.extras.state['usuario'];
-          return;
-        }
-        this.router.navigate(['/ingreso']);
-      }
-    });
+    this.usuario.recibirUsuario(this.activatedRoute, this.router);
   }
   
-  navegarIngreso() {
-    this.router.navigate(['/ingreso']);
+  navegar(pagina: string) {
+    this.usuario.navegarEnviandoUsuario(this.router, pagina);
   }
 
   ngOnInit() {
