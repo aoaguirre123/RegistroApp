@@ -1,0 +1,20 @@
+<ion-header translucent>
+  <ion-toolbar class="transparent-bg">
+    
+    <ion-button size="large" fill="clear">
+      <ion-icon name="person-circle-outline" color="light"></ion-icon>
+    </ion-button>
+
+    <div slot="end">
+
+      <ion-button (click)="sendClickEvent('scan')" size="small" fill="clear">
+        <ion-icon name="qr-code-outline" color="light"></ion-icon>
+      </ion-button>
+
+      <ion-button (click)="logout()" size="small" fill="clear">
+        <ion-icon name="log-out-outline" color="light"></ion-icon>
+      </ion-button>
+
+    </div>
+  </ion-toolbar>
+</ion-header>

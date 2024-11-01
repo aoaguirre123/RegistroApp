@@ -1,7 +1,7 @@
 {
-  "name": "RegistroApp",
+  "name": "angrydinosaur",
   "integrations": {
     "capacitor": {}
   },
-  "type": "angular"
+  "type": "angular-standalone"
 }

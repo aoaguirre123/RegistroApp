@@ -1,0 +1,56 @@
+.color-fondo {
+  // --background:  #04142b  ;
+  --background: url('../../../assets/img/FondoAB-SinEstudiantes.jpg') 0 0/100% 100% no-repeat;
+}
+
+.title-DUOC {
+  background-color: #04142b;
+  background: #04142b;
+  text-align: center;
+  margin: 0 auto;
+  color: white;
+}
+
+.logo-login-duoc {
+  width: 20rem;
+  margin: 0 auto;
+}
+
+.img-saludo {
+  height: 150px;
+  margin: 0 auto;
+}
+
+.card-color {
+  --background: #042648;
+  border-radius: 30px;
+  position: fixed;
+  top: 50%;
+  left: 49%;
+  width: 20rem;
+  min-height: 20rem;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.miclase-button {
+height: 60px;
+border-radius: 30px;
+width: 90%;
+--background: #04142b ;
+}
+
+ion-card {
+  color: white;
+  background: #042648;
+}
+
+ion-label {
+  color: white;
+}
+
+ion-icon {
+  color: white;
+}
+
+

@@ -1,59 +1,30 @@
-<ion-toolbar color=".">
-  <br>
-  <ion-title #titulo size="large">
-    Sistema de Asistencia DUOC
-  </ion-title>
-  <br>
-</ion-toolbar>
+
+<app-header 
+  (headerClick)="headerClick($event)">
+</app-header>
 
 <ion-content [fullscreen]="true" class="color-fondo">
-  <div class="logo-inicio-duoc">
-    <div>
-      <img src="../../../assets/img/logo-fondoazul.png" alt="">
-    </div>
-    <ion-card #card style="border-radius: 30px; width: 80%; margin: 0 auto;">
-      <ion-card-content><h1 style="color: white; text-align: center; font-weight: bold;">¡Bienvenido(a)!</h1></ion-card-content>
-      <ion-card-content><h2 #card style="color: white; text-align: center;">{{ usuario.nombre }} {{ usuario.apellido }}</h2></ion-card-content>
-    </ion-card>
-  </div>
 
-  <ion-card class="card-color" style="margin-top: 20px;">
-    <br>
-    <ion-button class="miclase-button" shape="round" style="--background: #e3a21b;" (click)="navegarMiClase()">
-      <ion-label>
-        Mi Clase
-      </ion-label>
-      <ion-icon slot="start" name="hand-left-outline"></ion-icon>
-    </ion-button>
-    <ion-button class="miclase-button" shape="round" (click)="navegarMisDatos()" style="margin-top: 8px;">
-      <ion-label>
-        Mis Datos
-      </ion-label>
-      <ion-icon slot="start" name="person-outline"></ion-icon>
-    </ion-button>
-    <div style="padding: 10px; margin: 15px; border-radius: 20px; background-color: #04142b;" [hidden]="!escaneando">
-      <video #video [hidden]="!escaneando" width="100%" style="border-radius: 20px;"></video>
-      <canvas #canvas hidden></canvas>
-      <ion-button class="" *ngIf="escaneando" (click)="detenerEscaneoQR()" expand="full" shape="round" style="--background: #ff3838;">
-        <ion-icon slot="start" name="stop-circle-outline"></ion-icon>
-        <ion-label>
-          Detener escaneo de QR
-        </ion-label>
-      </ion-button>
-    </div>
-    <ion-button class="miclase-button" *ngIf="!escaneando" shape="round" (click)="comenzarEscaneoQR()" style="margin-top: 8px;">
-      <ion-label>
-        Escanear QR
-      </ion-label>
-      <ion-icon slot="start" name="qr-code-outline"></ion-icon>
-    </ion-button>
-    <ion-button class="miclase-button " shape="round" style="--background: #ff3838; margin-top: 8px;"  (click)="logout()">
-      <ion-label>
-        Cerrar Sesión
-      </ion-label>
-      <ion-icon slot="start" name="log-out-outline"></ion-icon>
-    </ion-button>
-    <br>
-  </ion-card>
+  <app-qrwebscanner 
+    *ngIf="selectedComponent === 'qrwebscanner'" 
+    (scanned)="webQrScanned($event)"
+    (stopped)="webQrStopped()">
+  </app-qrwebscanner >
+  
+  <app-welcome 
+    *ngIf="selectedComponent === 'welcome'">
+  </app-welcome>
 
-</ion-content>X
+  <app-dinosaur 
+    *ngIf="selectedComponent === 'dinosaur'">
+  </app-dinosaur>
+
+  <app-forum 
+    *ngIf="selectedComponent === 'forum'">
+  </app-forum>
+
+</ion-content>
+
+<app-footer
+  (footerClick)="footerClick($event)">
+</app-footer>

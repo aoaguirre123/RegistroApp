@@ -1,3 +1,27 @@
-.angular
-node_modules
+
+# Ionic
+/.ionic
+/www
+/platforms
+/plugins
+
+# Node
+/node_modules
+npm-debug.log
+yarn-error.log
+
+# Visual Studio Code
 .vscode
+
+# Miscellaneous
+/.angular
+/.angular/cache
+.sass-cache/
+/.nx
+/.nx/cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+testem.log
+/typings
+/android

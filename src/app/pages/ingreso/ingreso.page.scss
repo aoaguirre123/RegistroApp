@@ -1,6 +1,6 @@
 .color-fondo {
   // --background:  #04142b  ;
-  --background: url('../../../assets/img/FondoAB.jpg') 0 0/100% 100% no-repeat;
+  --background: url('../../../assets/img/FondoAB-SinEstudiantes.jpg') 0 0/100% 100% no-repeat;
 }
 
 .caja-credenciales {
@@ -8,8 +8,8 @@
   border-radius: 30px;
   position: fixed;
   top: 50%;
-  left: 48%;
-  width: 80%;
+  left: 49%;
+  width: 20rem;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
@@ -38,10 +38,10 @@
 }
 
 .logo-login-duoc {
-  width: 70%;
+  width: 20rem;
   margin: 0 auto;
   position: fixed;
-  top: 15%;
+  top: 18%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);

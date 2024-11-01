@@ -1,137 +1,89 @@
-import { Component, ElementRef, OnInit, ViewChild, AfterViewInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { AnimationController, LoadingController } from '@ionic/angular';
-import jsQR, { QRCode } from 'jsqr';
-import { Usuario } from 'src/app/model/usuario';
+import { Component, ViewChild } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { IonContent } from '@ionic/angular/standalone';
+import { TranslateModule } from '@ngx-translate/core';
+import { HeaderComponent } from 'src/app/components/header/header.component';
+import { FooterComponent } from 'src/app/components/footer/footer.component';
+import { WelcomeComponent } from 'src/app/components/welcome/welcome.component';
+import { QrWebScannerComponent } from 'src/app/components/qr-web-scanner/qr-web-scanner.component';
+import { DinosaurComponent } from 'src/app/components/dinosaur/dinosaur.component';
+import { ForumComponent } from 'src/app/components/forum/forum.component';
+import { ScannerService } from 'src/app/services/scanner.service';
+import { AuthService } from 'src/app/services/auth.service';
+import { Capacitor } from '@capacitor/core';
+import { Dinosaur } from 'src/app/model/dinosaur';
 
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.page.html',
   styleUrls: ['./inicio.page.scss'],
+  standalone: true,
+  imports: [
+    CommonModule
+    , FormsModule
+    , TranslateModule
+    , IonContent
+    , HeaderComponent
+    , FooterComponent
+    , WelcomeComponent
+    , QrWebScannerComponent
+    , DinosaurComponent
+    , ForumComponent
+  ]
 })
-export class InicioPage implements OnInit, AfterViewInit {
+export class InicioPage {
 
-  @ViewChild('video')
-  private video!: ElementRef;
-
-  @ViewChild('canvas')
-  private canvas!: ElementRef;
-
-  @ViewChild('titulo', { read: ElementRef }) itemTitulo!: ElementRef;
+  @ViewChild(FooterComponent) footer!: FooterComponent;
+  selectedComponent = 'welcome';
   
-  public usuario: Usuario;
-  public loading: HTMLIonLoadingElement | null = null;
-  public escaneando = false;
-  public datosQR: string = '';
-
-  public constructor(
-    private loadingController: LoadingController,
-    private animationController: AnimationController,
-    private activatedRoute: ActivatedRoute,
-    private router: Router,
+  constructor(
+    private auth: AuthService,
+    private scanner: ScannerService
   )
-  {
-    this.usuario = new Usuario();
-    this.usuario.recibirUsuario(this.activatedRoute, this.router);
+  {}
+
+  ionViewWillEnter() {
+    this.changeComponent('welcome');
   }
 
-  ngAfterViewInit() {
-    this.animarTituloIzqDer();
+  async headerClick(button: string) {
+
+    if (button === 'scan' && Capacitor.getPlatform() === 'web')
+      this.selectedComponent = 'qrwebscanner';
+
+    if (button === 'scan' && Capacitor.getPlatform() !== 'web')
+        this.showDinoComponent(await this.scanner.scan());
   }
 
-  animarTituloIzqDer() {
-    this.animationController
-      .create()
-      .addElement(this.itemTitulo.nativeElement)
-      .iterations(Infinity)
-      .duration(6000)
-      .fromTo('transform', 'translate(-50%)', 'translate(100%)')
-      .play();
+  webQrScanned(qr: string) {
+    this.showDinoComponent(qr);
   }
 
-  public navegarMisDatos(): void {  
-    if (this.escaneando === true) {
-      this.detenerEscaneoQR();
-      this.usuario.navegarEnviandoUsuario(this.router, '/misdatos');
-    } else {
-      this.usuario.navegarEnviandoUsuario(this.router, '/misdatos');
+  webQrStopped() {
+    this.changeComponent('welcome');
+  }
+
+  showDinoComponent(qr: string) {
+
+    if (Dinosaur.isValidDinosaurQrCode(qr)) {
+      this.auth.qrCodeData.next(qr);
+      this.changeComponent('dinosaur');
+      return;
     }
+    
+    this.changeComponent('welcome');
   }
 
-  public navegarMiClase(): void {
-    if (this.escaneando === true) {
-      this.detenerEscaneoQR();
-      this.usuario.navegarEnviandoUsuario(this.router, '/miclase');
-      } else {
-        this.usuario.navegarEnviandoUsuario(this.router, '/miclase');
-      }
+  footerClick(button: string) {
+    this.selectedComponent = button;
   }
 
-  logout() {
-    this.usuario.navegarEnviandoUsuario(this.router, '/ingreso');
-    if (this.escaneando === true) {
-      this.detenerEscaneoQR();
-      }
+  changeComponent(name: string) {
+    this.selectedComponent = name;
+    this.footer.selectedButton = name;
   }
 
-  public async comenzarEscaneoQR() {
-    const mediaProvider: MediaProvider = await navigator.mediaDevices.getUserMedia({
-      video: {facingMode: 'environment'}
-    });
-    this.video.nativeElement.srcObject = mediaProvider;
-    this.video.nativeElement.setAttribute('playsinline', 'true');
-    this.video.nativeElement.play();
-    this.escaneando = true;
-    requestAnimationFrame(this.verificarVideo.bind(this));
-  }
 
-  public obtenerDatosQR(): boolean {
-    const w: number = this.video.nativeElement.videoWidth;
-    const h: number = this.video.nativeElement.videoHeight;
-    this.canvas.nativeElement.width = w;
-    this.canvas.nativeElement.height = h;
-    const context: CanvasRenderingContext2D = this.canvas.nativeElement.getContext('2d', { willReadFrequently: true });
-    context.drawImage(this.video.nativeElement, 0, 0, w, h);
-    const img: ImageData = context.getImageData(0, 0, w, h);
-    let qrCode: QRCode | null = jsQR(img.data, w, h, { inversionAttempts: 'dontInvert' });
-    if (qrCode) {
-      if (qrCode.data !== '') {
-        this.escaneando = false;
-        this.mostrarDatosQROrdenados(qrCode.data);
-        let stream = this.video.nativeElement.srcObject;
-        let tracks = stream.getTracks();
-        tracks.forEach((track: { stop: () => any; }) => track.stop());
-        return true;
-      }
-    }
-    return false;
-  }
 
-  public mostrarDatosQROrdenados(datosQR: string): void {
-    this.datosQR = datosQR;
-    this.usuario.asistencia = JSON.parse(datosQR);
-    this.usuario.navegarEnviandoUsuario(this.router, '/miclase');
-  }
-
-  async verificarVideo() {
-    if (this.video.nativeElement.readyState === this.video.nativeElement.HAVE_ENOUGH_DATA) {
-      if (this.obtenerDatosQR() || !this.escaneando) return;
-      requestAnimationFrame(this.verificarVideo.bind(this));
-    } else {
-      requestAnimationFrame(this.verificarVideo.bind(this));
-    }
-  }
-
-  public detenerEscaneoQR(): void {
-    this.escaneando = false;
-    let stream = this.video.nativeElement.srcObject;
-    let tracks = stream.getTracks();
-    tracks.forEach((track: { stop: () => any; }) => track.stop());
-  }
-
-  ngOnInit() {
-    this.comenzarEscaneoQR();
-  }
-  
-  
 }

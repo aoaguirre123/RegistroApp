@@ -1,9 +1,21 @@
+<ion-header>
+  <ion-toolbar class="transparent-bg">
+    <div slot="start" class="ion-margin">
+      <app-language #selectLanguage></app-language>
+    </div>
+    <div slot="end" class="ion-margin">
+      <ion-button shape="round" size="small" (click)="navigateTheme()">
+        Tema
+        <ion-icon slot="start" name="color-wand-outline"></ion-icon>
+      </ion-button>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
 <ion-content [fullscreen]="true" class="color-fondo">
   <div class="logo-login-duoc">
     <img src="../../../assets/img/logo-fondoazul.png" alt="">
-    <h4 style="text-align: center; font-weight: 500; padding-right: 5%;"> Sistema de Asistencia Duoc </h4>
   </div>
-
 
   <ion-card class="ion-padding-vertical caja-credenciales">
 
@@ -19,20 +31,24 @@
       </ion-card-content>
 
       <ion-item class="cuenta-box">
-        <ion-input [(ngModel)]="usuario.cuenta" labelPlacement="floating" label="Cuenta" placeholder="Ej: Jperez"></ion-input>
+        <ion-input [(ngModel)]="correo" labelPlacement="floating" label="Cuenta" placeholder="Ej: Jperez"></ion-input>
       </ion-item>
       <ion-item class="password-box">
-        <ion-input [(ngModel)]="usuario.password" labelPlacement="floating" type="password" label="Contraseña" placeholder="Ej: 123456"></ion-input>
+        <ion-input [(ngModel)]="password" labelPlacement="floating" type="password" label="Contraseña" placeholder="Ej: 123456"></ion-input>
       </ion-item>
 
     </ion-card-content>
   
-    <ion-button (click)="ingresar()" class="boton-ingresar" shape="round" style="margin-top: 15px;">
+    <ion-button (click)="login()" class="boton-ingresar" shape="round" style="margin-top: 15px;">
       <ion-label>Ingresar</ion-label>
     </ion-button>
 
     <ion-card-content style="text-align: center; margin-top: 10px; color: #2f41de;">
-      <ion-label (click)="navegar('/correo')">Olvide mi Contraseña</ion-label>
+      <ion-label >Olvide mi Contraseña</ion-label>
+    </ion-card-content>
+
+    <ion-card-content style="text-align: center;">
+      <ion-button shape="round" (click)="navegarMap()">Ruta a DUOC</ion-button>
     </ion-card-content>
 
   </ion-card>

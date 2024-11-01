@@ -2,17 +2,13 @@ import { NivelEducacional } from './nivel-educacional';
 
 export class Persona {
 
-  public nombre;
-  public apellido;
-  public nivelEducacional: NivelEducacional;
-  public fechaNacimiento: Date | undefined;
+  nombre = '';
+  apellido = '';
+  nivelEducacional = NivelEducacional.buscarNivelEducacional(1)!;
+  fechaNacimiento: Date = new Date();
+  direccion = '';
 
-  constructor() {
-    this.nombre = '';
-    this.apellido = '';
-    this.nivelEducacional = NivelEducacional.buscarNivelEducacional(1)!;
-    this.fechaNacimiento = new Date();
-  }
+  constructor() {}
 
   public getFechaNacimiento(): string {
     if (!this.fechaNacimiento) return 'No asignada';
