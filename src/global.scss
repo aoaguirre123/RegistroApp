@@ -165,42 +165,42 @@ ion-title {
     0 0 50px #00ffff; /* Quinto nivel de sombra */
 }
 
-@media screen and (orientation: portrait) {
-  .show-in-portrait {
-    display: block;
-  }
+// @media screen and (orientation: portrait) {
+//   .show-in-portrait {
+//     display: block;
+//   }
 
-  .hide-in-portrait {
-    display: none;
-  }
+//   .hide-in-portrait {
+//     display: none;
+//   }
 
-  .show-in-landscape {
-    display: none;
-  }
+//   .show-in-landscape {
+//     display: none;
+//   }
 
-  .hide-in-landscape {
-    display: block;
-  }
-}
+//   .hide-in-landscape {
+//     display: block;
+//   }
+// }
 
-/* Estilo para orientación horizontal */
-@media screen and (orientation: landscape) {
-  .show-in-portrait {
-    display: none;
-  }
+// /* Estilo para orientación horizontal */
+// @media screen and (orientation: landscape) {
+//   .show-in-portrait {
+//     display: none;
+//   }
 
-  .hide-in-portrait {
-    display: block;
-  }
+//   .hide-in-portrait {
+//     display: block;
+//   }
 
-  .show-in-landscape {
-    display: block;
-  }
+//   .show-in-landscape {
+//     display: block;
+//   }
 
-  .hide-in-landscape {
-    display: none;
-  }
-}
+//   .hide-in-landscape {
+//     display: none;
+//   }
+// }
 
 /* Clase .centrar:
    Esta clase está diseñada para centrar un contenido tanto horizontal como verticalmente

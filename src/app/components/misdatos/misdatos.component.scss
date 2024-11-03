@@ -56,12 +56,11 @@ main {
 .caja-credenciales {
   --background: #042648;
   border-radius: 30px;
-  position: fixed;
-  top: 50%;
-  left: 48%;
+  padding-top: 10px;
+  padding-bottom: 5px;
+
   width: 22rem;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  margin: 0 auto;
 }
 
 .color-fondo {
@@ -82,4 +81,15 @@ main {
   margin: auto;
 }
 
+.date-picker {
+  background-color: #2c3e50; // Cambia este valor al color que desees
+  color: white; // Cambia el color del texto para que se vea bien sobre el fondo oscuro
+  border-radius: 10px; // Esquinas redondeadas opcionales
+  padding: 5px; // Espaciado interno opcional
+}
 
+ion-datetime {
+  --background: #2c3e50;  // Cambia a tu color deseado
+  --color: white; // Cambia el color del texto
+  --border-radius: 10px; // Esquinas redondeadas opcionales
+}

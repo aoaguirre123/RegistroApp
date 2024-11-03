@@ -16,9 +16,9 @@ import { Subscription } from 'rxjs';
 import { User } from 'src/app/model/user';
 
 @Component({
-  selector: 'app-forum',
-  templateUrl: './forum.component.html',
-  styleUrls: ['./forum.component.scss'],
+  selector: 'app-foro',
+  templateUrl: './foro.component.html',
+  styleUrls: ['./foro.component.scss'],
   standalone: true,
   imports: [IonList, IonHeader, IonToolbar, IonTitle, IonCard
     , IonCardHeader, IonCardTitle, IonCardSubtitle, IonItem
@@ -27,7 +27,7 @@ import { User } from 'src/app/model/user';
     , IonFab, IonFabButton, IonFabList
     , CommonModule, FormsModule]
 })
-export class ForumComponent implements OnInit, OnDestroy {
+export class ForoComponent implements OnInit, OnDestroy {
 
   post: Post = new Post();
   posts: Post[] = [];
