@@ -1,0 +1,152 @@
+
+  <ion-card class="caja-credenciales">
+      <h4 class="ion-text-center" style="color: white">Datos personales</h4>
+
+    <div class=" ion-padding-horizontal">
+      <ion-item #itemCuenta class="box-color">
+        <ion-input [(ngModel)]="usuario.userName"
+            label="Cuenta" labelPlacement="floating"
+            placeholder="Ej: atorres" style="color: white;"></ion-input>
+      </ion-item>
+  
+      <ion-item #itemNombre class="box-color">
+        <ion-input [(ngModel)]="usuario.firstName" 
+            label="Nombre" labelPlacement="floating"
+            placeholder="Ej: Ana" style="color: white;"></ion-input>
+      </ion-item>
+  
+      <ion-item #itemApellido class="box-color" >
+        <ion-input [(ngModel)]="usuario.lastName"
+            label="Apellido" labelPlacement="floating"
+            placeholder="Ej: Torres" style="color: white;"></ion-input>
+      </ion-item>
+
+      <ion-item #itemCorreo class="box-color" >
+        <ion-input [(ngModel)]="usuario.email"
+            label="Correo" labelPlacement="floating"
+            placeholder="Ej: atorres@duocuc.cl" style="color: white;"></ion-input>
+      </ion-item>
+
+      <ion-item #itemDireccion class="box-color" >
+        <ion-input [(ngModel)]="usuario.address"
+            label="Direccion" labelPlacement="floating"
+            placeholder="San Luis 234, La Florida" style="color: white;"></ion-input>
+      </ion-item>
+
+      <ion-item #itemPregunta class="box-color" >
+        <ion-input [(ngModel)]="usuario.secretQuestion"
+            label="Pregunta Secreta" labelPlacement="floating"
+            placeholder="Ej: ¿Cuál es tu animal favorito?" style="color: white;"></ion-input>
+      </ion-item>
+
+      <ion-item #itemRespuesta class="box-color" >
+        <ion-input [(ngModel)]="usuario.secretAnswer"
+            label="Respuesta Secreta" labelPlacement="floating"
+            placeholder="Ej: gato" style="color: white;"></ion-input>
+      </ion-item>
+  
+      <ion-item #itemEducacion class="box-color">
+        <ion-label style="color: white;">Educación</ion-label>
+        <ion-select placeholder="Seleccione nivel " position="floating"
+            [(ngModel)]="usuario.educationalLevel!.id" style="color: whitesmoke;">
+          <ion-select-option *ngFor="let nivelEducacional of listaNivelesEducacionales" 
+            [value]="nivelEducacional.id">
+              {{nivelEducacional.name}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+  
+      <ion-item #FechaNacimiento class="box-color">
+        <!-- <app-date-picker 
+        [(ngModel)]="usuario.dateOfBirth"
+        (ionChange)="onFechaNacimientoChange($event)"
+        label="Nacimiento"
+        labelPlacement="floating">
+        </app-date-picker> -->
+        <ion-input style="color: white;" [(ngModel)]="usuario.dateOfBirth" labelPlacement="floating" label="Fecha de Nacimiento" placeholder="Ej: 12/02/2000"></ion-input>
+      </ion-item>
+
+      <ion-item #itemPassword class="box-color">
+        <ion-input style="color: white;" [(ngModel)]="usuario.password" labelPlacement="floating" type="password" label="Contraseña" placeholder="Ej: 123456"></ion-input>
+      </ion-item>
+
+      <ion-item #itemPassword2 class="box-color">
+        <ion-input style="color: white;" [(ngModel)]="usuario.password" labelPlacement="floating" type="password" label="Confirmar Contraseña" placeholder="Ej: 123456"></ion-input>
+      </ion-item>
+  
+      <div class="div-button" style="margin-bottom: 5px;">
+        <ion-button (click)="guardarUsuario()" expand="full" shape="round">
+          <ion-icon slot="start" name="save"></ion-icon>
+          Guardar Datos
+        </ion-button>
+      </div>
+    </div>
+  </ion-card>
+
+
+<!-- ---- -->
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>mis datos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+  <div>
+    <h3> Bienvenido(a) {{ usuario.firstName }} {{ usuario.lastName }} </h3>
+  </div>
+
+  <ion-item><ion-input label="Cuenta" labelPlacement="floating"
+        [(ngModel)]="usuario.userName"></ion-input></ion-item>
+
+  <ion-item><ion-input label="Correo" labelPlacement="floating"
+        [(ngModel)]="usuario.email"></ion-input></ion-item>
+
+  <ion-item><ion-input label="Contraseña" labelPlacement="floating"
+        [(ngModel)]="usuario.password"></ion-input></ion-item>
+
+  <ion-item><ion-input label="Pregunta secreta" labelPlacement="floating"
+        [(ngModel)]="usuario.secretQuestion"></ion-input></ion-item>
+
+  <ion-item><ion-input label="Respuesta secreta" labelPlacement="floating"
+        [(ngModel)]="usuario.secretAnswer"></ion-input></ion-item>
+
+  <ion-item><ion-input label="Nombre" labelPlacement="floating"
+        [(ngModel)]="usuario.firstName"></ion-input></ion-item>
+
+  <ion-item><ion-input label="Nombre usuario" labelPlacement="floating"
+        [(ngModel)]="usuario.userName"></ion-input></ion-item>
+
+  <ion-item><ion-input label="Apellido" labelPlacement="floating"
+        [(ngModel)]="usuario.lastName"></ion-input></ion-item>
+
+  <ion-item class="font-size-12">
+    <ion-select [(ngModel)]="usuario.educationalLevel.id"
+        (ionChange)="actualizarNivelEducacional($event)"
+        label="Educación" position="floating">
+      <ion-select-option *ngFor="let nivelEducacional of listaNivelesEducacionales"
+        [value]="nivelEducacional.id">
+          {{nivelEducacional.name}}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <app-date-picker 
+        [(ngModel)]="usuario.dateOfBirth"
+        (ionChange)="onFechaNacimientoChange($event)"
+        label="Nacimiento"
+        labelPlacement="floating">
+    </app-date-picker>
+  </ion-item>
+
+  <ion-item><ion-input label="Direccion" labelPlacement="floating"
+        [(ngModel)]="usuario.address"></ion-input></ion-item>
+
+  <ion-button (click)="guardarUsuario()">
+    Guardar
+  </ion-button>
+
+</ion-content> -->
+

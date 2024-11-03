@@ -1,9 +1,10 @@
-<ion-content>
+<ion-content class="color-fondo">
   <a id="topOfPage" href="#topOfPage"></a>
+  <br><br>
   <!-- Formulario para crear/editar publicaciones -->
-  <ion-card>
+  <ion-card class="crear-publicacion" >
     <ion-card-header>
-      <ion-card-title>Gestión de Publicaciones</ion-card-title>
+      <ion-card-title style="color: white;" class="ion-text-center">Gestión de Publicaciones</ion-card-title>
       <ion-card-subtitle>{{ selectedPostText }}</ion-card-subtitle>
     </ion-card-header>
 
@@ -29,32 +30,34 @@
   </ion-card>
 
   <!-- Lista de publicaciones recientes -->
-  <ion-card class="sin-bordes">
-    <ion-card-title class="con-padding-top">Publicaciones Recientes</ion-card-title>
-  </ion-card>
-
+  <br><br>
+  
+  
   <ion-list>
-    <ion-card *ngFor="let post of posts; trackBy: getPostId">
+    <h2 class="ion-text-center">Publicaciones Recientes</h2>
+    <ion-card *ngFor="let post of posts; trackBy: getPostId" style="background-color: #042648;">
       <ion-card-header>
         <h6>(Publicación #{{ post.id }}) {{ post.author }}</h6>
-        <h4>{{ post.title }}</h4>
       </ion-card-header>
-  
-      <ion-card-content>
-        <p>{{ post.body }}</p>
+      <h4 class="ion-text-center titulo-mensaje">{{ post.title }}</h4>
+      
+      <ion-card-content class="mensaje">
+        <p class="body-mensaje">{{ post.body }}</p>
       </ion-card-content>
   
       <!-- Contenedor para alinear los botones horizontalmente a la derecha -->
       <div style="display: flex; justify-content: flex-end; gap: 10px; margin-right: 16px;">
-        <ion-fab-button size="small" color="primary" (click)="editPost(post)">
+        <ion-fab-button *ngIf="post.author === usuarioActual" size="small" color="primary" (click)="editPost(post)">
           <ion-icon name="pencil-outline"></ion-icon>
         </ion-fab-button>
-        <ion-fab-button size="small" color="danger" (click)="deletePost(post)">
+        <ion-fab-button *ngIf="post.author === usuarioActual " size="small" color="danger" (click)="deletePost(post)">
           <ion-icon name="trash-outline"></ion-icon>
         </ion-fab-button>
+        <br *ngIf="post.author !== usuarioActual ">
       </div>
     </ion-card>
   </ion-list>
+  <br>
   
 
 </ion-content>

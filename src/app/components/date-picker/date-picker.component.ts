@@ -11,9 +11,9 @@ registerLocaleData(localeEs); // Registrar el idioma español
 
 @Component({
   selector: 'app-date-picker',
+  templateUrl: './date-picker.component.html',
   standalone: true,
   imports: [IonicModule, CommonModule, FormsModule],
-  templateUrl: './date-picker.component.html',
   styleUrls: ['./date-picker.component.scss'],
   providers: [
     {

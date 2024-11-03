@@ -34,6 +34,7 @@ export class ForumComponent implements OnInit, OnDestroy {
   selectedPostText = '';
   intervalId: any = null;
   user = new User();
+  usuarioActual  = ''; // Esto debe ser dinámico según la autenticación
   private postsSubscription!: Subscription;
   private userSubscription!: Subscription;
 
@@ -49,6 +50,7 @@ export class ForumComponent implements OnInit, OnDestroy {
       this.user = user? user : new User();
     });
     this.api.refreshPostList(); // Actualiza lista de posts al iniciar
+    this.usuarioActual = this.user.firstName + ' ' + this.user.lastName;
   }
 
   ngOnDestroy() {

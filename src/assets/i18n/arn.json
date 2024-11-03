@@ -1,5 +1,5 @@
 {
-    "AppName": "Angry-Dinosaurs",
+    "AppName": "RegistroApp",
     "AuthorText": "Rakinon tamiñ:",
     "Author": "Cristián Gómez Vega",
     "Language": "Dugün",
@@ -19,7 +19,7 @@
     "Login.Button.ForgotPassword": "Ñi rakinmapu elañmafi",
     "Login.Button.DarkMode": "Pewma külen müleyin",
 
-    "WelcomePage.Title.Wellcome": "¡Tüfachi mülenmi Angry-Dinosaurs!",
+    "WelcomePage.Title.Wellcome": "¡Tüfachi mülenmi RegistroApp!",
 
     "HomePage.Button.Wellcome": "Wüña",
     "HomePage.Button.Scan": "Wütran",

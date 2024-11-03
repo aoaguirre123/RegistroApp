@@ -5,19 +5,23 @@
 
 <ion-content [fullscreen]="true" class="color-fondo">
 
-  <app-qrwebscanner 
-    *ngIf="selectedComponent === 'qrwebscanner'" 
+  <app-misdatos 
+    *ngIf="selectedComponent === 'misdatos'">
+  </app-misdatos>
+
+  <app-codigoqr
+    *ngIf="selectedComponent === 'codigoqr'" 
     (scanned)="webQrScanned($event)"
     (stopped)="webQrStopped()">
-  </app-qrwebscanner >
+  </app-codigoqr >
   
   <app-welcome 
     *ngIf="selectedComponent === 'welcome'">
   </app-welcome>
 
-  <app-dinosaur 
-    *ngIf="selectedComponent === 'dinosaur'">
-  </app-dinosaur>
+  <app-miclase 
+    *ngIf="selectedComponent === 'miclase'">
+  </app-miclase>
 
   <app-forum 
     *ngIf="selectedComponent === 'forum'">

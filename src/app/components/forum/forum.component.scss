@@ -12,11 +12,12 @@
 }
 
 h6 {
-  color: darkgreen;
+  color: #d19519;
+  font-weight: bold;
 }
 
 h4 {
-  color: darkblue;
+  color: white;
   font-weight: bold;
 }
 
@@ -55,4 +56,48 @@ h4 {
 
 ion-modal {
   --height: auto;
+}
+
+.color-fondo {
+  // --background: #04142b;
+  --background: url('../../../assets/img/FondoAB-SinEstudiantes.jpg') 0 0/100% 100% no-repeat;
+}
+
+ion-list {
+  background-color: #04142b;
+  max-width: 25rem;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.crear-publicacion {
+  max-width: 25rem;
+  margin: 0 auto;
+  background-color: #042648;
+  border-radius: 15px;
+}
+
+ion-item {
+  --background: #042648;
+  border-radius: 15px;
+}
+
+.mensaje {
+  background-color: #d19519;
+  border-radius: 10px;
+  margin-left: 10px; 
+  margin-right: 10px; 
+  margin-bottom: 10px; 
+  padding: 10px;
+}
+
+.body-mensaje {
+  color: white; 
+  font: 700;
+}
+
+.titulo-mensaje {
+  font-weight: bold !important; 
+  margin-right: 10px;
+  margin-left: 10px;
 }

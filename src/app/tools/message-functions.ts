@@ -4,7 +4,7 @@ import { MessageEnum } from "./message-enum";
 export let showLogs: boolean = true;
 
 export const getAppName = (): string => {
-  return 'Angry Dinosaurs';
+  return 'RegistroApp';
 }
 
 export const log = (source: string, message: string, returnValue?: boolean): any => {

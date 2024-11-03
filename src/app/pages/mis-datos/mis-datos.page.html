@@ -1,4 +1,4 @@
-<!-- <ion-header [translucent]="true">
+<ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>mis-datos</ion-title>
   </ion-toolbar>
@@ -7,47 +7,47 @@
 <ion-content [fullscreen]="true">
   
   <div>
-    <h3> Bienvenido(a) {{ usuario.nombre }} {{ usuario.apellido }} </h3>
+    <h3> Bienvenido(a) {{ usuario.firstName }} {{ usuario.lastName }} </h3>
   </div>
 
   <ion-item><ion-input label="Cuenta" labelPlacement="floating"
-        [(ngModel)]="usuario.cuenta"></ion-input></ion-item>
+        [(ngModel)]="usuario.userName"></ion-input></ion-item>
 
   <ion-item><ion-input label="Correo" labelPlacement="floating"
-        [(ngModel)]="usuario.correo"></ion-input></ion-item>
+        [(ngModel)]="usuario.email"></ion-input></ion-item>
 
   <ion-item><ion-input label="Contraseña" labelPlacement="floating"
         [(ngModel)]="usuario.password"></ion-input></ion-item>
 
   <ion-item><ion-input label="Pregunta secreta" labelPlacement="floating"
-        [(ngModel)]="usuario.preguntaSecreta"></ion-input></ion-item>
+        [(ngModel)]="usuario.secretQuestion"></ion-input></ion-item>
 
   <ion-item><ion-input label="Respuesta secreta" labelPlacement="floating"
-        [(ngModel)]="usuario.respuestaSecreta"></ion-input></ion-item>
+        [(ngModel)]="usuario.secretAnswer"></ion-input></ion-item>
 
   <ion-item><ion-input label="Nombre" labelPlacement="floating"
-        [(ngModel)]="usuario.nombre"></ion-input></ion-item>
+        [(ngModel)]="usuario.firstName"></ion-input></ion-item>
 
   <ion-item><ion-input label="Nombre usuario" labelPlacement="floating"
-        [(ngModel)]="usuario.nombre"></ion-input></ion-item>
+        [(ngModel)]="usuario.userName"></ion-input></ion-item>
 
   <ion-item><ion-input label="Apellido" labelPlacement="floating"
-        [(ngModel)]="usuario.apellido"></ion-input></ion-item>
+        [(ngModel)]="usuario.lastName"></ion-input></ion-item>
 
   <ion-item class="font-size-12">
-    <ion-select [(ngModel)]="usuario.nivelEducacional.id"
+    <ion-select [(ngModel)]="usuario.educationalLevel.id"
         (ionChange)="actualizarNivelEducacional($event)"
         label="Educación" position="floating">
       <ion-select-option *ngFor="let nivelEducacional of listaNivelesEducacionales"
         [value]="nivelEducacional.id">
-          {{nivelEducacional.nombre}}
+          {{nivelEducacional.name}}
       </ion-select-option>
     </ion-select>
   </ion-item>
 
   <ion-item>
     <app-date-picker 
-        [(ngModel)]="usuario.fechaNacimiento"
+        [(ngModel)]="usuario.dateOfBirth"
         (ionChange)="onFechaNacimientoChange($event)"
         label="Nacimiento"
         labelPlacement="floating">
@@ -55,10 +55,10 @@
   </ion-item>
 
   <ion-item><ion-input label="Direccion" labelPlacement="floating"
-        [(ngModel)]="usuario.direccion"></ion-input></ion-item>
+        [(ngModel)]="usuario.address"></ion-input></ion-item>
 
   <ion-button (click)="guardarUsuario()">
     Guardar
   </ion-button>
 
-</ion-content> -->
+</ion-content>

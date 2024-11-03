@@ -6,13 +6,14 @@ import { TranslateModule } from '@ngx-translate/core';
 import { HeaderComponent } from 'src/app/components/header/header.component';
 import { FooterComponent } from 'src/app/components/footer/footer.component';
 import { WelcomeComponent } from 'src/app/components/welcome/welcome.component';
-import { QrWebScannerComponent } from 'src/app/components/qr-web-scanner/qr-web-scanner.component';
-import { DinosaurComponent } from 'src/app/components/dinosaur/dinosaur.component';
+import { MisDatosComponent } from 'src/app/components/misdatos/misdatos.component';
 import { ForumComponent } from 'src/app/components/forum/forum.component';
 import { ScannerService } from 'src/app/services/scanner.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { Capacitor } from '@capacitor/core';
-import { Dinosaur } from 'src/app/model/dinosaur';
+import { CodigoqrComponent } from 'src/app/components/codigoqr/codigoqr.component';
+import { MiclaseComponent } from 'src/app/components/miclase/miclase.component';
+import { Asistencia } from 'src/app/model/asistencia';
 
 @Component({
   selector: 'app-inicio',
@@ -20,17 +21,18 @@ import { Dinosaur } from 'src/app/model/dinosaur';
   styleUrls: ['./inicio.page.scss'],
   standalone: true,
   imports: [
-    CommonModule
-    , FormsModule
-    , TranslateModule
-    , IonContent
-    , HeaderComponent
-    , FooterComponent
-    , WelcomeComponent
-    , QrWebScannerComponent
-    , DinosaurComponent
-    , ForumComponent
-  ]
+    CommonModule,
+    FormsModule,
+    TranslateModule,
+    IonContent,
+    HeaderComponent,
+    FooterComponent,
+    WelcomeComponent,
+    ForumComponent,
+    MisDatosComponent,
+    CodigoqrComponent,
+    MiclaseComponent
+]
 })
 export class InicioPage {
 
@@ -50,25 +52,28 @@ export class InicioPage {
   async headerClick(button: string) {
 
     if (button === 'scan' && Capacitor.getPlatform() === 'web')
-      this.selectedComponent = 'qrwebscanner';
+      this.selectedComponent = 'codigoqr';
 
     if (button === 'scan' && Capacitor.getPlatform() !== 'web')
-        this.showDinoComponent(await this.scanner.scan());
+        this.mostrarMiclaseComponent(await this.scanner.scan());
+    
+    if (button === 'misdatos' && Capacitor.getPlatform() === 'web')
+      this.selectedComponent = 'misdatos';
   }
 
   webQrScanned(qr: string) {
-    this.showDinoComponent(qr);
+    this.mostrarMiclaseComponent(qr);
   }
 
   webQrStopped() {
     this.changeComponent('welcome');
   }
 
-  showDinoComponent(qr: string) {
+  mostrarMiclaseComponent(qr: string) {
 
-    if (Dinosaur.isValidDinosaurQrCode(qr)) {
+    if (Asistencia.isValidAsistenciaQrCode(qr)) {
       this.auth.qrCodeData.next(qr);
-      this.changeComponent('dinosaur');
+      this.changeComponent('miclase');
       return;
     }
     

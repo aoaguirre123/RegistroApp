@@ -15,23 +15,19 @@ export const routes: Routes = [
   },
   {
     path: 'inicio',
-    loadComponent: () => import('./pages/inicio/inicio.page').then( m => m.InicioPage)
+    loadComponent: () => import('./pages/inicio/inicio.page').then( m => m.InicioPage),
+    canActivate: [homeGuard]
   },
   {
-    path: 'login',
-    loadComponent: () => import('./pages/login/login.page').then( m => m.LoginPage),
-    canActivate: [loginGuard]
+    path: 'miruta',
+    loadComponent: () => import('./pages/miruta/miruta.page').then( m => m.MirutaPage)
   },
   {
-    path: 'map',
-    loadComponent: () => import('./pages/map/map.page').then( m => m.MapPage),
+    path: 'temas',
+    loadComponent: () => import('./pages/temas/temas.page').then( m => m.TemasPage)
   },
   {
-    path: 'theme',
-    loadComponent: () => import('./pages/theme/theme.page').then( m => m.ThemePage)
-  },
-  {
-    path: 'home',
-    loadComponent: () => import('./pages/home/home.page').then( m => m.HomePage)
+    path: 'mis-datos',
+    loadComponent: () => import('./pages/mis-datos/mis-datos.page').then( m => m.MisDatosPage)
   }
 ];

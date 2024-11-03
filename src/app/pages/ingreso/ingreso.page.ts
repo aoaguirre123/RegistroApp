@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { ViewWillEnter } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -45,11 +45,11 @@ export class IngresoPage implements ViewWillEnter {
   }
 
   navigateTheme() {
-    this.router.navigate(['/theme']);
+    this.router.navigate(['/temas']);
   }
 
-  navegarMap() {
-    this.router.navigate(['/map']);
+  navegarMiRuta() {
+    this.router.navigate(['/miruta']);
   }
   
   login() {

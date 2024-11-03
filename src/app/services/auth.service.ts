@@ -80,10 +80,9 @@ export class AuthService {
         return true;
       } else {
         const user = await this.db.findUser(userName, password);
-
-        if (user) {
+        if (user && user.firstName && user.lastName) {
           showToast(`¡Bienvenid@ ${user.firstName} ${user.lastName}!`);
-          await this.saveAuthUser(user);
+          await this.saveAuthUser (user);
           this.isFirstLogin.next(true);
           await this.router.navigate(['/inicio']);
           return true;

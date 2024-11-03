@@ -1,5 +1,5 @@
 {
-    "AppName": "Angry-Dinosaurs",
+    "AppName": "RegistroApp",
     "AuthorText": "Desarrollado por:",
     "Author": "Cristián Gómez Vega",
     "Language": "Idioma",
@@ -19,7 +19,7 @@
     "Login.Button.ForgotPassword": "Olvidé mi contraseña",
     "Login.Button.DarkMode": "Oscuro",
 
-    "WelcomePage.Title.Wellcome": "¡Bienvenido a Angry-Dinosaurs!",
+    "WelcomePage.Title.Wellcome": "¡Bienvenido a RegistroApp!",
 
     "HomePage.Button.Wellcome": "Inicio",
     "HomePage.Button.Scan": "Escanear",

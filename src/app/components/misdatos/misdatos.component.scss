@@ -1,0 +1,85 @@
+ion-input, ion-select {
+  text-align: right;
+}
+
+// CGV: El siguiente estilo se agregó para que se pueda mostrar siempre el botón
+// del MatDatePicker, puesto que aparecía invisible producto de los colores 
+// asociados al Theme escogido al instalar Angular Material
+::ng-deep .mat-datepicker-toggle{
+  color: blue;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table, th, td {
+  border: 0px;
+}
+
+.font-size-12 {
+  font-size: 12px;
+
+}
+
+.font-size-16 {
+  font-size: 16px;
+
+}
+
+.font-size-18 {
+  font-size: 18px;
+}
+
+.date-width {
+  width: 105px;
+}
+
+.cell-align-right {
+  text-align: right;
+}
+
+.cell-width-0 {
+  width: 0px;
+}
+
+html, body {
+  overflow-y: hidden;
+}
+
+main {
+  max-height: 100vh; /* Asegura que el contenedor no exceda la altura de la ventana */
+  overflow-y: auto;  /* Permite scroll si es necesario */
+}
+
+.caja-credenciales {
+  --background: #042648;
+  border-radius: 30px;
+  position: fixed;
+  top: 50%;
+  left: 48%;
+  width: 22rem;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.color-fondo {
+  // --background:  #04142b  ;
+  --background: url('../../../assets/img/FondoAB-SinEstudiantes.jpg') 0 0/100% 100% no-repeat;
+}
+
+.box-color {
+  --background: #042648
+}
+
+.div-button {
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+  margin: auto;
+}
+
+
