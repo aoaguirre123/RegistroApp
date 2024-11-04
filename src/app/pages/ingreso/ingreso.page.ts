@@ -48,6 +48,10 @@ export class IngresoPage implements ViewWillEnter {
     this.router.navigate(['/temas']);
   }
 
+  navegarCorreo() {
+    this.router.navigate(['/correo']);
+  }
+
   navegarMiRuta() {
     this.router.navigate(['/miruta']);
   }

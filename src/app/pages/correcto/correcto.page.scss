@@ -1,0 +1,36 @@
+.color-fondo {
+  // --background:  #04142b  ;
+  --background: url('../../../assets/img/FondoAB-SinEstudiantes.jpg') 0 0/100% 100% no-repeat;
+}
+
+.logo-login-duoc {
+  width: 20rem;
+  margin: 0 auto;
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -70%);
+}
+
+.caja-correcto {
+  --background: #042648;
+  border-radius: 30px;
+  
+  top: 50%;
+  left: 49%;
+  width: 400px;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  //opacity: 0;
+}
+
+.boton-regresar {
+  --background: #f6b01d;
+  color: white;
+  display: block;
+  margin: 0 auto;
+  top: 10%;
+  text-align: center;
+  width: 10rem;
+}

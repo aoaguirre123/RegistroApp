@@ -1,0 +1,37 @@
+<ion-content [fullscreen]="true" class="color-fondo">
+  <div class="logo-login-duoc">
+    <img src="../../../assets/img/logo-fondoazul.png" >
+  </div>
+  <br>
+
+
+  <ion-card class="ion-padding-vertical caja-correcto">
+
+    <ion-card-content>
+      <h2 class="ion-text-center" style="color: white;">
+        Tu Respuesta es Correcta!
+      </h2>
+      <br>
+      <div>
+        <img src="../../../assets/img/UniversitariosCorrecto.png">
+      </div>
+      <br>
+      <div>
+        <h2 class="ion-text-center" style="color: white;">
+          Tu Contraseña es: {{ clave }}<strong style="color: #f6b01d;">  </strong>
+        </h2>
+      </div>
+      <ion-button class="boton-regresar" shape="round" size="large" (click)="navegarIngreso()">
+        <ion-icon name="arrow-back"></ion-icon> 
+        <span style="font-size: medium;">Regresar</span>
+    
+      </ion-button>
+    </ion-card-content>
+
+  </ion-card>
+  <br><br><br>
+
+  
+
+
+</ion-content>

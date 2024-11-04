@@ -1,0 +1,49 @@
+.color-fondo {
+  // --background:  #04142b  ;
+  --background: url('../../../assets/img/FondoAB-SinEstudiantes.jpg') 0 0/100% 100% no-repeat;
+}
+
+.caja-credenciales {
+  --background: #042648;
+  border-radius: 30px;
+  position: fixed;
+  top: 50%;
+  left: 49%;
+  width: 20rem;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.boton-recuperar {
+  --background: #f6b01d;
+  color: white;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  width: 10rem;
+  
+}
+
+.cuenta-box {
+  --background: #042648;
+}
+
+.password-box {
+  --background: #042648;
+}
+
+.titulo-caja-credenciales {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  color: white;
+}
+
+.logo-login-duoc {
+  width: 20rem;
+  margin: 0 auto;
+  position: fixed;
+  top: 18%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
