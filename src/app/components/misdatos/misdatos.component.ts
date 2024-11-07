@@ -11,6 +11,10 @@ import { EducationalLevel } from 'src/app/model/educational-level';
 import { showToast } from 'src/app/tools/message-functions';
 import { addIcons } from 'ionicons';
 import { save } from 'ionicons/icons';
+import { LanguageComponent } from 'src/app/components/language/language.component';
+import { TranslateModule } from '@ngx-translate/core';
+
+
 @Component({
   selector: 'app-misdatos',
   templateUrl: './misdatos.component.html',
@@ -20,7 +24,9 @@ import { save } from 'ionicons/icons';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    IonicModule
+    IonicModule,
+    LanguageComponent,
+    TranslateModule
   ]
 })
 export class MisDatosComponent{

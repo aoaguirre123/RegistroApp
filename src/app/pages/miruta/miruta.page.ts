@@ -11,6 +11,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { addIcons } from 'ionicons';
 import { chevronBackOutline } from 'ionicons/icons';
+import { LanguageComponent } from 'src/app/components/language/language.component';
 
 @Component({
   selector: 'app-miruta',
@@ -24,6 +25,7 @@ import { chevronBackOutline } from 'ionicons/icons';
   , TranslateModule // CGV-Permite usar pipe 'translate'
   , HeaderComponent // CGV-Permite usar el componente Header
   , FooterComponent // CGV-Permite usar el componente Footer
+  , LanguageComponent
 ]
 })
 

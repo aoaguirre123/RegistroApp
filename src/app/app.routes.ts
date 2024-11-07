@@ -27,10 +27,6 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/temas/temas.page').then( m => m.TemasPage)
   },
   {
-    path: 'mis-datos',
-    loadComponent: () => import('./pages/mis-datos/mis-datos.page').then( m => m.MisDatosPage)
-  },
-  {
     path: 'correo',
     loadComponent: () => import('./pages/correo/correo.page').then( m => m.CorreoPage)
   },

@@ -2,19 +2,19 @@
   <div class="logo-login-duoc">
     <img src="../../../assets/img/logo-fondoazul.png" />
     <h4 style="text-align: center; font-weight: 500; padding-right: 5%">
-      Sistema de Asistencia DUOC
+      {{ 'Pregunta.Titulo.SistemaAsistencia' | translate }}
     </h4>
   </div>
 
   <ion-card class="ion-padding-vertical caja-credenciales">
     <ion-card-content style="text-align: center">
       <ion-label style="color: #f6b01d; font-weight: bolder; font-size: medium">
-        Recuperar Contraseña
+        {{ 'Pregunta.Titulo.RecuperarContrasena' | translate }}
       </ion-label>
 
       <ion-card-content style="text-align: center; font-size: 15px">
         <ion-label class="titulo-caja-credenciales">
-          Paso 2: Responde la pregunta secreta.
+          {{ 'Pregunta.Paso2.PreguntaSecreta' | translate }}
         </ion-label>
       </ion-card-content>
       
@@ -25,25 +25,19 @@
       <ion-item class="cuenta-box">
         <ion-input [(ngModel)]="respuestaSecreta" ngDefaultControl
           labelPlacement="floating"
-          label="Ingresa tu respuesta"
-          placeholder="Escribe aqui tu respuesta"
+          [label]="'Pregunta.Input.IngresarRespuesta' | translate"
+          placeholder="{{ 'Pregunta.Input.Placeholder' | translate }}"
           name='respuestaSecreta'
         ></ion-input>
-        
       </ion-item>
     </ion-card-content>
 
-    <ion-button   (click)="validateSecretAnswer()" class="boton-recuperar" shape="round" style="margin-top: 15px">
-      <ion-label>Recuperar Contraseña</ion-label>
+    <ion-button (click)="validateSecretAnswer()" class="boton-recuperar" shape="round" style="margin-top: 15px">
+      <ion-label>{{ 'Pregunta.Boton.RecuperarContrasena' | translate }}</ion-label>
     </ion-button>
 
-
-
-    <ion-card-content
-      style="text-align: center; margin-top: 10px; color: #2f41de"
-    >
-      <ion-label (click)="iraingreso()">Iniciar Sesion</ion-label>
+    <ion-card-content style="text-align: center; margin-top: 10px; color: #2f41de">
+      <ion-label (click)="iraingreso()">{{ 'Pregunta.Link.IniciarSesion' | translate }}</ion-label>
     </ion-card-content>
   </ion-card>
 </ion-content>
-

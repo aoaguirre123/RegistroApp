@@ -4,13 +4,16 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { EventEmitter } from '@angular/core';
 import jsQR, { QRCode } from 'jsqr';
+import { LanguageComponent } from 'src/app/components/language/language.component';
+import { TranslateModule } from '@ngx-translate/core';
+
 
 @Component({
   selector: 'app-codigoqr',
   templateUrl: './codigoqr.component.html',
   styleUrls: ['./codigoqr.component.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule],
+  imports: [IonicModule, CommonModule, FormsModule, TranslateModule, LanguageComponent],
 })
 export class CodigoqrComponent {
 

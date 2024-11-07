@@ -1,67 +1,217 @@
 {
-    "AppName": "RegistroApp",
-    "AuthorText": "Developed by:",
-    "Author": "Cristián Gómez Vega",
-    "Language": "Language",
-    "Language.English": "English",
-    "Language.Spanish": "Español",
-    "Language.Mapudungun": "Mapudungun",
-    
-    "Start.StartNewExperience": "Start a new experience",
+  "AppName": "RegistroApp",
+  "AuthorText": "Developed by:",
+  "Author": "Cristián Gómez Vega",
+  "Language": "Language",
+  "Language.English": "English",
+  "Language.Spanish": "Español",
+  "Language.Mapudungun": "Mapudungun",
 
-    "Login.Title.Login": "Login",
-    "Login.Label.Email": "Email",
-    "Login.Placeholder.Email": "Enter your email here",
-    "Login.Label.Password": "Password",
-    "Login.Placeholder.Password": "Enter your password here",
-    "Login.Button.Login": "Login",
-    "Login.Button.Signin": "Sign Up",
-    "Login.Button.ForgotPassword": "Forgot my password",
-    "Login.Button.DarkMode": "Dark Mode",
+  "Start.StartNewExperience": "Start a new experience",
 
-    "WelcomePage.Title.Wellcome": "Welcome to RegistroApp!",
+  "Ingreso.Tema": "Theme",
+  "Ingreso.Titulo": "Sign in with your",
+  "Ingreso.AVA": "AVA",
+  "Ingreso.Cuenta": "Account",
+  "Ingreso.Placeholder.Cuenta": "Ex: Jperez",
+  "Ingreso.Contrasena": "Password",
+  "Ingreso.Placeholder.Contrasena": "Ex: 123456",
+  "Ingreso.BotonIngresar": "Sign In",
+  "Ingreso.OlvideContrasena": "Forgot my Password",
+  "Ingreso.RutaDuoc": "Route to DUOC",
 
-    "HomePage.Button.Wellcome": "Home",
-    "HomePage.Button.Scan": "Scan",
-    "HomePage.Button.Dinosaur": "Dinosaur",
-    "HomePage.Button.Forum": "Forum",
+  "Welcome": {
+    "TituloSistema": "DUOC Attendance System",
+    "Bienvenido": "Welcome!"
+  },
 
-    "ThemePage.Label.ColorTheme": "Color Theme:",
-    "ThemePage.Color.Light": "Light",
-    "ThemePage.Color.Dark": "Dark",
-    "ThemePage.Color.Green": "Green",
-    "ThemePage.Color.Red": "Red",
-    "ThemePage.Color.Facebook": "Facebook",
-    "ThemePage.Color.Instagram": "Instagram",
-    "ThemePage.Color.Duoc": "Duoc",
-    
-    "ThemePage.Button.Primary": "Primary Button",
-    "ThemePage.Button.Secondary": "Secondary Button",
-    "ThemePage.Button.Tertiary": "Tertiary Button",
-    "ThemePage.Button.Success": "Success Button",
-    "ThemePage.Button.Warning": "Warning Button",
-    "ThemePage.Button.Danger": "Danger Button",
-    "ThemePage.Button.Light": "Light Button",
-    "ThemePage.Button.Dark": "Dark Button",
-    "ThemePage.Button.Home": "Home",
-    "ThemePage.Button.Logout": "Logout",
-    
-    "ThemePage.Card.Title": "Card Title",
-    "ThemePage.Card.Subtitle": "Card Subtitle",
-    "ThemePage.Card.Content": "This is the content of the card. You can customize the colors of the card and its content.",
-    
-    "ThemePage.List.Title": "Lists",
-    "ThemePage.List.Item1": "List Item 1",
-    "ThemePage.List.Item2": "List Item 2",
-    "ThemePage.List.Item3": "List Item 3",
-    
-    "ThemePage.Calendar.Title": "Calendars",
-    
-    "ThemePage.Form.Title": "Data Entry",
-    "ThemePage.Form.NameLabel": "Name",
-    "ThemePage.Form.NamePlaceholder": "Enter your name",
-    "ThemePage.Form.DescriptionLabel": "Description",
-    "ThemePage.Form.DescriptionPlaceholder": "Write a description here...",
-    "ThemePage.Form.ToggleLabel": "Enable notifications",
-    "ThemePage.Form.CheckboxLabel": "I accept the terms"
+  "HomePage.Button.Wellcome": "Home",
+  "HomePage.Button.Scan": "Scan",
+  "HomePage.Button.Dinosaur": "Dinosaur",
+  "HomePage.Button.Forum": "Forum",
+
+  "ThemePage.Label.ColorTheme": "Color Theme:",
+  "ThemePage.Color.Light": "Light",
+  "ThemePage.Color.Dark": "Dark",
+  "ThemePage.Color.Green": "Green",
+  "ThemePage.Color.Red": "Red",
+  "ThemePage.Color.Facebook": "Facebook",
+  "ThemePage.Color.Instagram": "Instagram",
+  "ThemePage.Color.Duoc": "Duoc",
+
+  "ThemePage.Button.Primary": "Primary Button",
+  "ThemePage.Button.Secondary": "Secondary Button",
+  "ThemePage.Button.Tertiary": "Tertiary Button",
+  "ThemePage.Button.Success": "Success Button",
+  "ThemePage.Button.Warning": "Warning Button",
+  "ThemePage.Button.Danger": "Danger Button",
+  "ThemePage.Button.Light": "Light Button",
+  "ThemePage.Button.Dark": "Dark Button",
+  "ThemePage.Button.Home": "Home",
+  "ThemePage.Button.Logout": "Logout",
+
+  "ThemePage.Card.Title": "Card Title",
+  "ThemePage.Card.Subtitle": "Card Subtitle",
+  "ThemePage.Card.Content": "This is the content of the card. You can customize the colors of the card and its content.",
+
+  "ThemePage.List.Title": "Lists",
+  "ThemePage.List.Item1": "List Item 1",
+  "ThemePage.List.Item2": "List Item 2",
+  "ThemePage.List.Item3": "List Item 3",
+
+  "ThemePage.Calendar.Title": "Calendars",
+
+  "ThemePage.Form.Title": "Data Entry",
+  "ThemePage.Form.NameLabel": "Name",
+  "ThemePage.Form.NamePlaceholder": "Enter your name",
+  "ThemePage.Form.DescriptionLabel": "Description",
+  "ThemePage.Form.DescriptionPlaceholder": "Write a description here...",
+  "ThemePage.Form.ToggleLabel": "Enable notifications",
+  "ThemePage.Form.CheckboxLabel": "I accept the terms",
+
+  "MisDatos": {
+    "Titulo": "Personal Information",
+    "Cuenta": "Account",
+    "Placeholder": {
+      "Cuenta": "Ex: atorres",
+      "Nombre": "Ex: Ana",
+      "Apellido": "Ex: Torres",
+      "Correo": "Ex: atorres@duocuc.cl",
+      "Direccion": "San Luis 234, La Florida",
+      "PreguntaSecreta": "Ex: What is your favorite animal?",
+      "RespuestaSecreta": "Ex: cat",
+      "Educacion": "Select level",
+      "Contrasena": "Ex: 123456",
+      "ConfirmarContrasena": "Ex: 123456"
+    },
+    "Nombre": "First Name",
+    "Apellido": "Last Name",
+    "Correo": "Email",
+    "Direccion": "Address",
+    "PreguntaSecreta": "Secret Question",
+    "RespuestaSecreta": "Secret Answer",
+    "Educacion": "Education",
+    "FechaNacimiento": "Date of Birth",
+    "Aceptar": "Accept",
+    "Cancelar": "Cancel",
+    "Contrasena": "Password",
+    "ConfirmarContrasena": "Confirm Password",
+    "GuardarDatos": "Save Data"
+  },
+
+  "Miclase": {
+    "Titulo": "My Class",
+    "Sede": "Campus",
+    "Sigla": "Code",
+    "Seccion": "Section",
+    "Asignatura": "Subject",
+    "Profesor": "Professor",
+    "Dia": "Day",
+    "BloqueInicio": "Start Block",
+    "BloqueTermino": "End Block",
+    "Inicio": "Start",
+    "Termino": "End",
+    "EscanearQR": "First, you need to scan a QR code!"
+  },
+
+  "Foro": {
+    "GestionPublicaciones": "Post Management",
+    "Titulo": "Title",
+    "Descripcion": "Description",
+    "IngreseTitulo": "Enter the post title",
+    "EscribeContenido": "Write the post content",
+    "Limpiar": "Clear",
+    "Guardar": "Save",
+    "Actualizar": "Update",
+    "PublicacionesRecientes": "Recent Posts",
+    "PublicacionNumero": "Post #"
+  },
+
+  "CodigoQR": {
+    "DetenerEscaneo": "Stop QR scanning"
+  },
+
+  "RespuestaCorrecta": {
+    "Titulo": "Your Answer is Correct!",
+    "Contraseña": "Your Password is:",
+    "Regresar": "Go Back"
+  },
+
+  "RespuestaIncorrecta": {
+    "Titulo": "Your Answer is",
+    "Incorrecto": "Incorrect",
+    "Intentar": "You must try again",
+    "Regresar": "Go Back"
+  },
+
+  "Miruta": {
+    "Titulo": {
+      "Mapa": "Map"
+    },
+    "Boton": {
+      "Duoc": "DUOC",
+      "Aqui": "Here",
+      "Ruta": "Route"
+    }
+  },
+
+  "Correo": {
+    "Titulo": {
+      "SistemaAsistencia": "DUOC Attendance System",
+      "RecuperarContrasena": "Recover Password"
+    },
+    "Paso1": {
+      "IngresarCorreo": "Step 1: Enter Your Email"
+    },
+    "Input": {
+      "IngresarCorreo": "Enter your email",
+      "Placeholder": "Ex: jperez@duocuc.cl"
+    },
+    "Boton": {
+      "RecuperarContrasena": "Recover Password"
+    },
+    "Link": {
+      "IniciarSesion": "Log In"
+    }
+  },
+
+  "Correo": {
+    "Titulo": {
+      "SistemaAsistencia": "DUOC Attendance System",
+      "RecuperarContrasena": "Recover Password"
+    },
+    "Paso1": {
+      "IngresarCorreo": "Step 1: Enter Your Email"
+    },
+    "Input": {
+      "IngresarCorreo": "Enter your email",
+      "Placeholder": "Ex: jperez@duocuc.cl"
+    },
+    "Boton": {
+      "RecuperarContrasena": "Recover Password"
+    },
+    "Link": {
+      "IniciarSesion": "Log In"
+    }
+  },
+
+  "Pregunta": {
+    "Titulo": {
+      "SistemaAsistencia": "DUOC Attendance System",
+      "RecuperarContrasena": "Recover Password"
+    },
+    "Paso2": {
+      "PreguntaSecreta": "Step 2: Answer the secret question."
+    },
+    "Input": {
+      "IngresarRespuesta": "Enter your answer",
+      "Placeholder": "Type your answer here"
+    },
+    "Boton": {
+      "RecuperarContrasena": "Recover Password"
+    },
+    "Link": {
+      "IniciarSesion": "Log In"
+    }
+  }
 }

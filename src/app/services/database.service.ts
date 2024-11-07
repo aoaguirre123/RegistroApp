@@ -227,10 +227,20 @@ export class DatabaseService {
   async findUser(userName: string, password: string): Promise<User | undefined> {
     try {
       const q = 'SELECT * FROM USER WHERE userName=? AND password=?;';
+      
+      // Ejecutar la consulta y obtener las filas
       const rows = (await this.db.query(q, [userName, password])).values;
-      return rows? this.rowToUser(rows[0]) : undefined;
+      
+      // Verificar si hay filas en la respuesta
+      if (rows && rows.length > 0) {
+        return this.rowToUser(rows[0]);
+      } else {
+        return undefined; // Si no hay resultados, retornar undefined
+      }
     } catch (error) {
+      // Mostrar el error con más información de depuración
       showAlertError('DataBaseService.findUser', error);
+      console.error('Error al buscar usuario:', error);
       return undefined;
     }
   }

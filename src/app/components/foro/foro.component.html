@@ -2,27 +2,27 @@
   <a id="topOfPage" href="#topOfPage"></a>
   <br><br>
   <!-- Formulario para crear/editar publicaciones -->
-  <ion-card class="crear-publicacion" >
+  <ion-card class="crear-publicacion">
     <ion-card-header>
-      <ion-card-title style="color: white;" class="ion-text-center">Gestión de Publicaciones</ion-card-title>
+      <ion-card-title style="color: white;" class="ion-text-center">{{ 'Foro.GestionPublicaciones' | translate }}</ion-card-title>
       <ion-card-subtitle>{{ selectedPostText }}</ion-card-subtitle>
     </ion-card-header>
 
     <ion-card-content>
       <ion-item>
-        <ion-label position="floating" color="secondary">Título</ion-label>
-        <ion-input [(ngModel)]="post.title" placeholder="Ingresa el título de la publicación"></ion-input>
+        <ion-label position="floating" color="secondary">{{ 'Foro.Titulo' | translate }}</ion-label>
+        <ion-input [(ngModel)]="post.title" placeholder="{{ 'Foro.IngreseTitulo' | translate }}"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label position="floating" color="secondary">Descripción</ion-label>
-        <ion-textarea [(ngModel)]="post.body" placeholder="Escribe el contenido de la publicación"></ion-textarea>
+        <ion-label position="floating" color="secondary">{{ 'Foro.Descripcion' | translate }}</ion-label>
+        <ion-textarea [(ngModel)]="post.body" placeholder="{{ 'Foro.EscribeContenido' | translate }}"></ion-textarea>
       </ion-item>
 
       <div class="ion-text-center margin-top-6">
-        <ion-button color="medium" shape="round" (click)="cleanPost()">Limpiar</ion-button>
+        <ion-button color="medium" shape="round" (click)="cleanPost()">{{ 'Foro.Limpiar' | translate }}</ion-button>
         <ion-button color="primary" shape="round" (click)="savePost()">
-          {{ post.id ? 'Actualizar' : 'Guardar' }}
+          {{ post.id ? ('Foro.Actualizar' | translate) : ('Foro.Guardar' | translate) }}
         </ion-button>
       </div>
       
@@ -32,12 +32,11 @@
   <!-- Lista de publicaciones recientes -->
   <br><br>
   
-  
   <ion-list>
-    <h2 class="ion-text-center">Publicaciones Recientes</h2>
+    <h2 class="ion-text-center">{{ 'Foro.PublicacionesRecientes' | translate }}</h2>
     <ion-card *ngFor="let post of posts; trackBy: getPostId" style="background-color: #042648;">
       <ion-card-header>
-        <h6>(Publicación #{{ post.id }}) {{ post.author }}</h6>
+        <h6>{{ 'Foro.PublicacionNumero' | translate }} #{{ post.id }} - {{ post.author }}</h6>
       </ion-card-header>
       <h4 class="ion-text-center titulo-mensaje">{{ post.title }}</h4>
       
@@ -50,14 +49,12 @@
         <ion-fab-button *ngIf="post.author === usuarioActual" size="small" color="primary" (click)="editPost(post)">
           <ion-icon name="pencil-outline"></ion-icon>
         </ion-fab-button>
-        <ion-fab-button *ngIf="post.author === usuarioActual " size="small" color="danger" (click)="deletePost(post)">
+        <ion-fab-button *ngIf="post.author === usuarioActual" size="small" color="danger" (click)="deletePost(post)">
           <ion-icon name="trash-outline"></ion-icon>
         </ion-fab-button>
-        <br *ngIf="post.author !== usuarioActual ">
+        <br *ngIf="post.author !== usuarioActual">
       </div>
     </ion-card>
   </ion-list>
   <br>
-  
-
 </ion-content>

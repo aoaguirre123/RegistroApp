@@ -2,41 +2,37 @@
   <div class="logo-login-duoc">
     <img src="../../../assets/img/logo-fondoazul.png" />
     <h4 style="text-align: center; font-weight: 500; padding-right: 5%">
-      Sistema de Asistencia DUOC
+      {{ 'Correo.Titulo.SistemaAsistencia' | translate }}
     </h4>
   </div>
 
   <ion-card class="ion-padding-vertical caja-credenciales">
     <ion-card-content style="text-align: center">
       <ion-label style="color: #f6b01d; font-weight: bolder; font-size: medium">
-        Recuperar Contraseña
+        {{ 'Correo.Titulo.RecuperarContrasena' | translate }}
       </ion-label>
 
       <ion-card-content style="text-align: center; font-size: 15px">
         <ion-label class="titulo-caja-credenciales">
-          Paso 1: Ingresa tu Correo
+          {{ 'Correo.Paso1.IngresarCorreo' | translate }}
         </ion-label>
       </ion-card-content>
 
       <ion-item class="cuenta-box">
         <ion-input [(ngModel)]="email"
           labelPlacement="floating"
-          label="Ingresa tu correo"
-          placeholder="Ej: jperez@duocuc.cl"
+          [label]="'Correo.Input.IngresarCorreo' | translate"
+          placeholder="{{ 'Correo.Input.Placeholder' | translate }}"
         ></ion-input>
       </ion-item>
     </ion-card-content>
 
-    <ion-button  (click)="validateEmail()" class="boton-recuperar" shape="round" style="margin-top: 15px">
-      <ion-label>Recuperar Contraseña</ion-label>
+    <ion-button (click)="validateEmail()" class="boton-recuperar" shape="round" style="margin-top: 15px">
+      <ion-label>{{ 'Correo.Boton.RecuperarContrasena' | translate }}</ion-label>
     </ion-button>
 
-
-
-    <ion-card-content
-      style="text-align: center; margin-top: 10px; color: #2f41de"
-    >
-      <ion-label>Iniciar Sesion</ion-label>
+    <ion-card-content style="text-align: center; margin-top: 10px; color: #2f41de">
+      <ion-label (click)="navegarIngreso()">{{ 'Correo.Link.IniciarSesion' | translate }}</ion-label>
     </ion-card-content>
   </ion-card>
 </ion-content>

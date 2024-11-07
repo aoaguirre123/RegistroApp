@@ -1,67 +1,217 @@
 {
-    "AppName": "RegistroApp",
-    "AuthorText": "Desarrollado por:",
-    "Author": "Cristián Gómez Vega",
-    "Language": "Idioma",
-    "Language.English": "English",
-    "Language.Spanish": "Español",
-    "Language.Mapudungun": "Mapudungun",
-    
-    "Start.StartNewExperience": "Comienza una nueva experiencia",
+  "AppName": "RegistroApp",
+  "AuthorText": "Desarrollado por:",
+  "Author": "Cristián Gómez Vega",
+  "Language": "Idioma",
+  "Language.English": "English",
+  "Language.Spanish": "Español",
+  "Language.Mapudungun": "Mapudungun",
 
-    "Login.Title.Login": "Iniciar sesión",
-    "Login.Label.Email": "Correo",
-    "Login.Placeholder.Email": "Ingresa aquí tu correo",
-    "Login.Label.Password": "Contraseña",
-    "Login.Placeholder.Password": "Ingresa aquí tu contraseña",
-    "Login.Button.Login": "Ingresar",
-    "Login.Button.Signin": "Registrarse",
-    "Login.Button.ForgotPassword": "Olvidé mi contraseña",
-    "Login.Button.DarkMode": "Oscuro",
+  "Start.StartNewExperience": "Comienza una nueva experiencia",
 
-    "WelcomePage.Title.Wellcome": "¡Bienvenido a RegistroApp!",
+  "Ingreso.Tema": "Tema",
+  "Ingreso.Titulo": "Ingresa con tu cuenta de",
+  "Ingreso.AVA": "AVA",
+  "Ingreso.Cuenta": "Cuenta",
+  "Ingreso.Placeholder.Cuenta": "Ej: Jperez",
+  "Ingreso.Contrasena": "Contraseña",
+  "Ingreso.Placeholder.Contrasena": "Ej: 123456",
+  "Ingreso.BotonIngresar": "Ingresar",
+  "Ingreso.OlvideContrasena": "Olvidé mi Contraseña",
+  "Ingreso.RutaDuoc": "Ruta a DUOC",
 
-    "HomePage.Button.Wellcome": "Inicio",
-    "HomePage.Button.Scan": "Escanear",
-    "HomePage.Button.Dinosaur": "Dinosaurio",
-    "HomePage.Button.Forum": "Foro",
+  "Welcome": {
+    "TituloSistema": "Sistema de Asistencia DUOC",
+    "Bienvenido": "¡Bienvenido(a)!"
+  },
 
-    "ThemePage.Label.ColorTheme": "Tema de color:",
-    "ThemePage.Color.Light": "Claro",
-    "ThemePage.Color.Dark": "Oscuro",
-    "ThemePage.Color.Green": "Verde",
-    "ThemePage.Color.Red": "Rojo",
-    "ThemePage.Color.Facebook": "Facebook",
-    "ThemePage.Color.Instagram": "Instagram",
-    "ThemePage.Color.Duoc": "DUOC",
-    
-    "ThemePage.Button.Primary": "Botón Primario",
-    "ThemePage.Button.Secondary": "Botón Secundario",
-    "ThemePage.Button.Tertiary": "Botón Terciario",
-    "ThemePage.Button.Success": "Botón Éxito",
-    "ThemePage.Button.Warning": "Botón Advertencia",
-    "ThemePage.Button.Danger": "Botón Peligro",
-    "ThemePage.Button.Light": "Botón Claro",
-    "ThemePage.Button.Dark": "Botón Oscuro",
-    "ThemePage.Button.Home": "Inicio",
-    "ThemePage.Button.Logout": "Salir",
-    
-    "ThemePage.Card.Title": "Título de la Tarjeta",
-    "ThemePage.Card.Subtitle": "Subtítulo de la Tarjeta",
-    "ThemePage.Card.Content": "Este es el contenido de la tarjeta. Puedes personalizar los colores de la tarjeta y su contenido.",
-    
-    "ThemePage.List.Title": "Listas",
-    "ThemePage.List.Item1": "Elemento de Lista 1",
-    "ThemePage.List.Item2": "Elemento de Lista 2",
-    "ThemePage.List.Item3": "Elemento de Lista 3",
-    
-    "ThemePage.Calendar.Title": "Calendarios",
-    
-    "ThemePage.Form.Title": "Ingreso de datos",
-    "ThemePage.Form.NameLabel": "Nombre",
-    "ThemePage.Form.NamePlaceholder": "Ingresa tu nombre",
-    "ThemePage.Form.DescriptionLabel": "Descripción",
-    "ThemePage.Form.DescriptionPlaceholder": "Escribe aquí una descripción...",
-    "ThemePage.Form.ToggleLabel": "Activar notificaciones",
-    "ThemePage.Form.CheckboxLabel": "Acepto los términos"
+  "HomePage.Button.Wellcome": "Inicio",
+  "HomePage.Button.Scan": "Escanear",
+  "HomePage.Button.Dinosaur": "Dinosaurio",
+  "HomePage.Button.Forum": "Foro",
+
+  "ThemePage.Label.ColorTheme": "Tema de color:",
+  "ThemePage.Color.Light": "Claro",
+  "ThemePage.Color.Dark": "Oscuro",
+  "ThemePage.Color.Green": "Verde",
+  "ThemePage.Color.Red": "Rojo",
+  "ThemePage.Color.Facebook": "Facebook",
+  "ThemePage.Color.Instagram": "Instagram",
+  "ThemePage.Color.Duoc": "DUOC",
+
+  "ThemePage.Button.Primary": "Botón Primario",
+  "ThemePage.Button.Secondary": "Botón Secundario",
+  "ThemePage.Button.Tertiary": "Botón Terciario",
+  "ThemePage.Button.Success": "Botón Éxito",
+  "ThemePage.Button.Warning": "Botón Advertencia",
+  "ThemePage.Button.Danger": "Botón Peligro",
+  "ThemePage.Button.Light": "Botón Claro",
+  "ThemePage.Button.Dark": "Botón Oscuro",
+  "ThemePage.Button.Home": "Inicio",
+  "ThemePage.Button.Logout": "Salir",
+
+  "ThemePage.Card.Title": "Título de la Tarjeta",
+  "ThemePage.Card.Subtitle": "Subtítulo de la Tarjeta",
+  "ThemePage.Card.Content": "Este es el contenido de la tarjeta. Puedes personalizar los colores de la tarjeta y su contenido.",
+
+  "ThemePage.List.Title": "Listas",
+  "ThemePage.List.Item1": "Elemento de Lista 1",
+  "ThemePage.List.Item2": "Elemento de Lista 2",
+  "ThemePage.List.Item3": "Elemento de Lista 3",
+
+  "ThemePage.Calendar.Title": "Calendarios",
+
+  "ThemePage.Form.Title": "Ingreso de datos",
+  "ThemePage.Form.NameLabel": "Nombre",
+  "ThemePage.Form.NamePlaceholder": "Ingresa tu nombre",
+  "ThemePage.Form.DescriptionLabel": "Descripción",
+  "ThemePage.Form.DescriptionPlaceholder": "Escribe aquí una descripción...",
+  "ThemePage.Form.ToggleLabel": "Activar notificaciones",
+  "ThemePage.Form.CheckboxLabel": "Acepto los términos",
+
+  "MisDatos": {
+    "Titulo": "Datos personales",
+    "Cuenta": "Cuenta",
+    "Placeholder": {
+      "Cuenta": "Ej: atorres",
+      "Nombre": "Ej: Ana",
+      "Apellido": "Ej: Torres",
+      "Correo": "Ej: atorres@duocuc.cl",
+      "Direccion": "San Luis 234, La Florida",
+      "PreguntaSecreta": "Ej: ¿Cuál es tu animal favorito?",
+      "RespuestaSecreta": "Ej: gato",
+      "Educacion": "Seleccione nivel",
+      "Contrasena": "Ej: 123456",
+      "ConfirmarContrasena": "Ej: 123456"
+    },
+    "Nombre": "Nombre",
+    "Apellido": "Apellido",
+    "Correo": "Correo",
+    "Direccion": "Dirección",
+    "PreguntaSecreta": "Pregunta Secreta",
+    "RespuestaSecreta": "Respuesta Secreta",
+    "Educacion": "Educación",
+    "FechaNacimiento": "Fecha de Nacimiento",
+    "Aceptar": "Aceptar",
+    "Cancelar": "Cancelar",
+    "Contrasena": "Contraseña",
+    "ConfirmarContrasena": "Confirmar Contraseña",
+    "GuardarDatos": "Guardar Datos"
+  },
+
+  "Miclase": {
+    "Titulo": "Mi Clase",
+    "Sede": "Sede",
+    "Sigla": "Sigla",
+    "Seccion": "Sección",
+    "Asignatura": "Asignatura",
+    "Profesor": "Profesor",
+    "Dia": "Día",
+    "BloqueInicio": "Bloque de Inicio",
+    "BloqueTermino": "Bloque de término",
+    "Inicio": "Inicio",
+    "Termino": "Término",
+    "EscanearQR": "¡Primero debes escanear un código QR!"
+  },
+
+  "Foro": {
+    "GestionPublicaciones": "Gestión de Publicaciones",
+    "Titulo": "Título",
+    "Descripcion": "Descripción",
+    "IngreseTitulo": "Ingresa el título de la publicación",
+    "EscribeContenido": "Escribe el contenido de la publicación",
+    "Limpiar": "Limpiar",
+    "Guardar": "Guardar",
+    "Actualizar": "Actualizar",
+    "PublicacionesRecientes": "Publicaciones Recientes",
+    "PublicacionNumero": "Publicación #"
+  },
+
+  "CodigoQR": {
+    "DetenerEscaneo": "Detener escaneo de QR"
+  },
+
+  "RespuestaCorrecta": {
+    "Titulo": "Tu Respuesta es Correcta!",
+    "Contraseña": "Tu Contraseña es:",
+    "Regresar": "Regresar"
+  },
+
+  "RespuestaIncorrecta": {
+    "Titulo": "Tu Respuesta es",
+    "Incorrecto": "Incorrecta",
+    "Intentar": "Debes intentar nuevamente",
+    "Regresar": "Regresar"
+  },
+
+  "Miruta": {
+    "Titulo": {
+      "Mapa": "Mapa"
+    },
+    "Boton": {
+      "Duoc": "DUOC",
+      "Aqui": "Aquí",
+      "Ruta": "Ruta"
+    }
+  },
+
+  "Correo": {
+    "Titulo": {
+      "SistemaAsistencia": "Sistema de Asistencia DUOC",
+      "RecuperarContrasena": "Recuperar Contraseña"
+    },
+    "Paso1": {
+      "IngresarCorreo": "Paso 1: Ingresa tu Correo"
+    },
+    "Input": {
+      "IngresarCorreo": "Ingresa tu correo",
+      "Placeholder": "Ej: jperez@duocuc.cl"
+    },
+    "Boton": {
+      "RecuperarContrasena": "Recuperar Contraseña"
+    },
+    "Link": {
+      "IniciarSesion": "Iniciar Sesión"
+    }
+  },
+
+  "Correo": {
+    "Titulo": {
+      "SistemaAsistencia": "Sistema de Asistencia DUOC",
+      "RecuperarContrasena": "Recuperar Contraseña"
+    },
+    "Paso1": {
+      "IngresarCorreo": "Paso 1: Ingresa tu Correo"
+    },
+    "Input": {
+      "IngresarCorreo": "Ingresa tu correo",
+      "Placeholder": "Ej: jperez@duocuc.cl"
+    },
+    "Boton": {
+      "RecuperarContrasena": "Recuperar Contraseña"
+    },
+    "Link": {
+      "IniciarSesion": "Iniciar Sesión"
+    }
+  },
+
+  "Pregunta": {
+    "Titulo": {
+      "SistemaAsistencia": "Sistema de Asistencia DUOC",
+      "RecuperarContrasena": "Recuperar Contraseña"
+    },
+    "Paso2": {
+      "PreguntaSecreta": "Paso 2: Responde la pregunta secreta."
+    },
+    "Input": {
+      "IngresarRespuesta": "Ingresa tu respuesta",
+      "Placeholder": "Escribe aquí tu respuesta"
+    },
+    "Boton": {
+      "RecuperarContrasena": "Recuperar Contraseña"
+    },
+    "Link": {
+      "IniciarSesion": "Iniciar Sesión"
+    }
+  }
 }

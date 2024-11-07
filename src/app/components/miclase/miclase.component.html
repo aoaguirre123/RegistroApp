@@ -1,22 +1,21 @@
-
 <div *ngIf="asistencia">
   <ion-card class="caja-credenciales" style="margin: 0 auto;">
     <ion-card-header>
-      <h2 style="color: white;" class="ion-text-center">Mi Clase</h2>
+      <h2 style="color: white;" class="ion-text-center">{{ 'Miclase.Titulo' | translate }}</h2>
     </ion-card-header>
     <ion-card-content>
       <br>
       
-      <p>Sede:  <strong> {{ asistencia.sede }} </strong> </p>
-      <p>Sigla: <strong>{{ asistencia.idAsignatura }}</strong></p>
-      <p>Sección: <strong>{{ asistencia.seccion }}</strong></p>
-      <p>Asignatura: <strong>{{ asistencia.nombreAsignatura }}</strong></p>
-      <p>Profesor: <strong>{{ asistencia.nombreProfesor }}</strong></p>
-      <p>Día: <strong>{{ asistencia.dia }}</strong></p>
-      <p>Bloque de Inicio: <strong>{{ asistencia.bloqueInicio }}</strong></p>
-      <p>Bloque de termino: <strong>{{ asistencia.bloqueTermino }}</strong></p>
-      <p>Inicio: <strong>{{ asistencia.horaInicio }}</strong></p>
-      <p>Termino: <strong>{{ asistencia.horaFin }}</strong></p>
+      <p>{{ 'Miclase.Sede' }}:  <strong> {{ asistencia.sede }} </strong> </p>
+      <p>{{ 'Miclase.Sigla' }}: <strong>{{ asistencia.idAsignatura }}</strong></p>
+      <p>{{ 'Miclase.Seccion' }}: <strong>{{ asistencia.seccion }}</strong></p>
+      <p>{{ 'Miclase.Asignatura' }}: <strong>{{ asistencia.nombreAsignatura }}</strong></p>
+      <p>{{ 'Miclase.Profesor' }}: <strong>{{ asistencia.nombreProfesor }}</strong></p>
+      <p>{{ 'Miclase.Dia' }}: <strong>{{ asistencia.dia }}</strong></p>
+      <p>{{ 'Miclase.BloqueInicio' }}: <strong>{{ asistencia.bloqueInicio }}</strong></p>
+      <p>{{ 'Miclase.BloqueTermino' }}: <strong>{{ asistencia.bloqueTermino }}</strong></p>
+      <p>{{ 'Miclase.Inicio' }}: <strong>{{ asistencia.horaInicio }}</strong></p>
+      <p>{{ 'Miclase.Termino' }}: <strong>{{ asistencia.horaFin }}</strong></p>
       
       <br>
     </ion-card-content>
@@ -26,14 +25,14 @@
 <div *ngIf="!asistencia">
   <ion-card class="caja-credenciales" style="margin: 0 auto;">
     <ion-card-header>
-      <h2 style="color: white;" class="ion-text-center">Mi Clase</h2>
+      <h2 style="color: white;" class="ion-text-center">{{ 'Miclase.Titulo' | translate }}</h2>
     </ion-card-header>
     <ion-card-content>
       <div class="img-escanear">
         <img src="../../../assets/img/escanearQR.png" alt="">
       </div>
       <br>
-      <h3 style="color: white;" class="ion-text-center">¡Primero debes escanear un código QR!</h3>
+      <h3 style="color: white;" class="ion-text-center">{{ 'Miclase.EscanearQR' | translate }}</h3>
       <br>
     </ion-card-content>
   </ion-card>

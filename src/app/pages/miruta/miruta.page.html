@@ -1,9 +1,9 @@
-<ion-header >
+<ion-header>
   <ion-toolbar class="duoc-bg">
     <div slot="start" class="ion-margin">
       <ion-icon name="chevron-back-outline" (click)="goBack()" size="large"></ion-icon>
     </div>
-    <ion-title class="ion-text-center">Mapa</ion-title>
+    <ion-title class="ion-text-center">{{ 'Miruta.Titulo.Mapa' | translate }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -14,21 +14,21 @@
 
 </ion-content>
 
-<ion-footer >
+<ion-footer>
   <ion-toolbar class="ion-text-center duoc-bg" style="margin-top: 5px;">
     <ion-button shape="round" color="secondary" size="small"
         (click)="goToDUOC()" >
-      DUOC
+      {{ 'Miruta.Boton.Duoc' | translate }}
     </ion-button>
 
     <ion-button shape="round" color="secondary" size="small"
         (click)="goToMyPosition()">
-      Aquí
+      {{ 'Miruta.Boton.Aqui' | translate }}
     </ion-button>
 
     <ion-button shape="round" color="secondary" size="small"
         (click)="showRouteToDuoc()">
-      Ruta
+      {{ 'Miruta.Boton.Ruta' | translate }}
     </ion-button>
 
     <div *ngIf="distance">

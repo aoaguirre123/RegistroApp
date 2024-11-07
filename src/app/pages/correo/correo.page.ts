@@ -1,11 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { LanguageComponent } from 'src/app/components/language/language.component';
 import { IonicModule } from '@ionic/angular';
+import { NavigationExtras } from '@angular/router';
+import { Usuario } from 'src/app/model/usuario';
+import { User } from 'src/app/model/user';
 import { Router } from '@angular/router';
 import { DatabaseService } from 'src/app/services/database.service';
+import { ToastController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-correo',
@@ -19,11 +24,12 @@ import { DatabaseService } from 'src/app/services/database.service';
     , IonicModule
     , LanguageComponent  ]
 })
-export class CorreoPage {
+export class CorreoPage implements OnInit {
   email: string;
   constructor(
     private router: Router,
-    private databaseService: DatabaseService
+    private databaseService: DatabaseService,
+    private toastController: ToastController
   ) {   
     this.email = '';
   }
@@ -34,12 +40,22 @@ export class CorreoPage {
       this.router.navigate(['/incorrecto']);
       return;
     }
+
     const user = await this.databaseService.findUserByEmail(this.email);
-    if (user && user.email === this.email) {
+    if (user) {
       this.router.navigate(['/pregunta'], { queryParams: { email: this.email } });
     } else {
       this.router.navigate(['/incorrecto']);
     }
+  }
+
+  navegarIngreso() {
+    this.router.navigate(['/ingreso']);
+  }
+
+  
+
+  ngOnInit() {
   }
 
   // public ingresarPaginaValidarRespuestaSecreta(): void {

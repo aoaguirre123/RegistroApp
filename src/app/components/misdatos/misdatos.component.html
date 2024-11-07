@@ -1,54 +1,46 @@
 <ion-content class="color-fondo">
   <br>
-  <h3 class="ion-text-center" style="color: white">Datos personales</h3>
+  <h3 class="ion-text-center" style="color: white">{{ 'MisDatos.Titulo' | translate }}</h3>
   <ion-card class="caja-credenciales">
-  
-    <div class=" ion-padding-horizontal">
+    <div class="ion-padding-horizontal">
       <ion-item #itemCuenta class="box-color">
         <ion-input [(ngModel)]="usuario.userName"
-            label="Cuenta" labelPlacement="floating"
-            placeholder="Ej: atorres" style="color: white;"></ion-input>
+            label="{{ 'MisDatos.Cuenta' | translate }}" labelPlacement="floating"
+            placeholder="{{ 'MisDatos.Placeholder.Cuenta' | translate }}" style="color: white;"></ion-input>
       </ion-item>
-  
       <ion-item #itemNombre class="box-color">
-        <ion-input [(ngModel)]="usuario.firstName" 
-            label="Nombre" labelPlacement="floating"
-            placeholder="Ej: Ana" style="color: white;"></ion-input>
+        <ion-input [(ngModel)]="usuario.firstName"
+            label="{{ 'MisDatos.Nombre' | translate }}" labelPlacement="floating"
+            placeholder="{{ 'MisDatos.Placeholder.Nombre' | translate }}" style="color: white;"></ion-input>
       </ion-item>
-  
-      <ion-item #itemApellido class="box-color" >
+      <ion-item #itemApellido class="box-color">
         <ion-input [(ngModel)]="usuario.lastName"
-            label="Apellido" labelPlacement="floating"
-            placeholder="Ej: Torres" style="color: white;"></ion-input>
+            label="{{ 'MisDatos.Apellido' | translate }}" labelPlacement="floating"
+            placeholder="{{ 'MisDatos.Placeholder.Apellido' | translate }}" style="color: white;"></ion-input>
       </ion-item>
-  
-      <ion-item #itemCorreo class="box-color" >
+      <ion-item #itemCorreo class="box-color">
         <ion-input [(ngModel)]="usuario.email"
-            label="Correo" labelPlacement="floating"
-            placeholder="Ej: atorres@duocuc.cl" style="color: white;"></ion-input>
+            label="{{ 'MisDatos.Correo' | translate }}" labelPlacement="floating"
+            placeholder="{{ 'MisDatos.Placeholder.Correo' | translate }}" style="color: white;"></ion-input>
       </ion-item>
-  
-      <ion-item #itemDireccion class="box-color" >
+      <ion-item #itemDireccion class="box-color">
         <ion-input [(ngModel)]="usuario.address"
-            label="Direccion" labelPlacement="floating"
-            placeholder="San Luis 234, La Florida" style="color: white;"></ion-input>
+            label="{{ 'MisDatos.Direccion' | translate }}" labelPlacement="floating"
+            placeholder="{{ 'MisDatos.Placeholder.Direccion' | translate }}" style="color: white;"></ion-input>
       </ion-item>
-  
-      <ion-item #itemPregunta class="box-color" >
+      <ion-item #itemPregunta class="box-color">
         <ion-input [(ngModel)]="usuario.secretQuestion"
-            label="Pregunta Secreta" labelPlacement="floating"
-            placeholder="Ej: ¿Cuál es tu animal favorito?" style="color: white;"></ion-input>
+            label="{{ 'MisDatos.PreguntaSecreta' | translate }}" labelPlacement="floating"
+            placeholder="{{ 'MisDatos.Placeholder.PreguntaSecreta' | translate }}" style="color: white;"></ion-input>
       </ion-item>
-  
-      <ion-item #itemRespuesta class="box-color" >
+      <ion-item #itemRespuesta class="box-color">
         <ion-input [(ngModel)]="usuario.secretAnswer"
-            label="Respuesta Secreta" labelPlacement="floating"
-            placeholder="Ej: gato" style="color: white;"></ion-input>
+            label="{{ 'MisDatos.RespuestaSecreta' | translate }}" labelPlacement="floating"
+            placeholder="{{ 'MisDatos.Placeholder.RespuestaSecreta' | translate }}" style="color: white;"></ion-input>
       </ion-item>
-  
       <ion-item #itemEducacion class="box-color">
-        <ion-label style="color: white;">Educación</ion-label>
-        <ion-select placeholder="Seleccione nivel " position="floating"
+        <ion-label style="color: white;">{{ 'MisDatos.Educacion' | translate }}</ion-label>
+        <ion-select placeholder="{{ 'MisDatos.Placeholder.Educacion' | translate }}" position="floating"
             [(ngModel)]="usuario.educationalLevel!.id" style="color: whitesmoke;">
           <ion-select-option *ngFor="let nivelEducacional of listaNivelesEducacionales" 
             [value]="nivelEducacional.id">
@@ -56,9 +48,8 @@
           </ion-select-option>
         </ion-select>
       </ion-item>
-  
       <ion-item class="box-color">
-        <ion-label style="color: white;">Fecha de Nacimiento</ion-label>
+        <ion-label style="color: white;">{{ 'MisDatos.FechaNacimiento' | translate }}</ion-label>
         <ion-input 
           readonly 
           [value]="usuario.dateOfBirth ? (usuario.dateOfBirth | date: 'dd/MM/yyyy') : ''" 
@@ -67,7 +58,7 @@
         </ion-input>
       </ion-item>
       <div *ngIf="showDatePicker" class="date-picker">
-        <div >
+        <div>
           <ion-datetime  
             [(ngModel)]="tempDate" 
             presentation="date" 
@@ -76,35 +67,24 @@
             style="color: whitesmoke;">
           </ion-datetime>
         </div>
-        <ion-button expand="full" shape="round" (click)="onFechaNacimientoConfirm()">Aceptar</ion-button>
-        <ion-button expand="full" shape="round" (click)="onFechaNacimientoCancel()">Cancelar</ion-button>
+        <ion-button expand="full" shape="round" (click)="onFechaNacimientoConfirm()">{{ 'MisDatos.Aceptar' | translate }}</ion-button>
+        <ion-button expand="full" shape="round" (click)="onFechaNacimientoCancel()">{{ 'MisDatos.Cancelar' | translate }}</ion-button>
       </div>
       <ion-item #itemPassword class="box-color">
-        <ion-input style="color: white;" [(ngModel)]="usuario.password" labelPlacement="floating" type="password" label="Contraseña" placeholder="Ej: 123456"></ion-input>
+        <ion-input style="color: white;" [(ngModel)]="usuario.password" labelPlacement="floating" type="password" 
+            label="{{ 'MisDatos.Contrasena' | translate }}" placeholder="{{ 'MisDatos.Placeholder.Contrasena' | translate }}"></ion-input>
       </ion-item>
-  
       <ion-item #itemPassword2 class="box-color">
-        <ion-input style="color: white;" [(ngModel)]="usuario.password" labelPlacement="floating" type="password" label="Confirmar Contraseña" placeholder="Ej: 123456"></ion-input>
+        <ion-input style="color: white;" [(ngModel)]="usuario.password" labelPlacement="floating" type="password" 
+            label="{{ 'MisDatos.ConfirmarContrasena' | translate }}" placeholder="{{ 'MisDatos.Placeholder.ConfirmarContrasena' | translate }}"></ion-input>
       </ion-item>
-  
       <div class="div-button" style="margin-bottom: 5px;">
         <ion-button (click)="guardarUsuario()" expand="full" shape="round">
           <ion-icon slot="start" name="save"></ion-icon>
-          Guardar Datos
+          {{ 'MisDatos.GuardarDatos' | translate }}
         </ion-button>
       </div>
     </div>
   </ion-card>
   <br>
 </ion-content>
-
-
-
-  <!-- <ion-item>
-    <app-date-picker 
-        [(ngModel)]="usuario.dateOfBirth"
-        (ionChange)="onFechaNacimientoChange($event)"
-        label="Nacimiento"
-        labelPlacement="floating">
-    </app-date-picker>
-  </ion-item> -->

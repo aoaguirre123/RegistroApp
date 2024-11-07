@@ -3,13 +3,15 @@ import { TranslateModule } from '@ngx-translate/core';
 import { User } from 'src/app/model/user';
 import { AuthService } from 'src/app/services/auth.service';
 import { IonContent, IonButton, IonIcon, IonLabel, IonToolbar, IonTitle, IonCard, IonCardContent, AnimationController } from "@ionic/angular/standalone";
+import { LanguageComponent } from 'src/app/components/language/language.component';
+
 
 @Component({
   selector: 'app-welcome',
   templateUrl: './welcome.component.html',
   styleUrls: ['./welcome.component.scss'],
   standalone: true,
-  imports: [IonCardContent, IonCard, IonTitle, IonToolbar, IonLabel, IonIcon, IonButton, IonContent, TranslateModule]
+  imports: [IonCardContent, IonCard, IonTitle, IonToolbar, IonLabel, IonIcon, IonButton, IonContent, TranslateModule, LanguageComponent]
 })
 export class WelcomeComponent implements AfterViewInit {
 

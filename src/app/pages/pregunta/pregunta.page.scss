@@ -9,7 +9,8 @@
   position: fixed;
   top: 50%;
   left: 49%;
-  width: 30rem;
+  width: 90%;
+  max-width: 30rem;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }

@@ -18,7 +18,8 @@ import { arrowBack } from 'ionicons/icons';
     , FormsModule 
     , TranslateModule
     , IonicModule
-    , LanguageComponent  ]
+    , LanguageComponent
+  ]
 })
 export class IncorrectoPage implements OnInit {
   correo: string;

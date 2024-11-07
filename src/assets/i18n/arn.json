@@ -1,67 +1,197 @@
 {
-    "AppName": "RegistroApp",
-    "AuthorText": "Rakinon tamiñ:",
-    "Author": "Cristián Gómez Vega",
-    "Language": "Dugün",
-    "Language.English": "English",
-    "Language.Spanish": "Español",
-    "Language.Mapudungun": "Mapudungun",
-    
-    "Start.StartNewExperience": "Eymi müley kiñe küpan trawün",
+  "AppName": "RegistroApp",
+  "AuthorText": "Rakinon tamiñ:",
+  "Author": "Cristián Gómez Vega",
+  "Language": "Dugün",
+  "Language.English": "English",
+  "Language.Spanish": "Español",
+  "Language.Mapudungun": "Mapudungun",
 
-    "Login.Title.Login": "Wüñolün",
-    "Login.Label.Email": "E-mail",
-    "Login.Placeholder.Email": "Eymi mülen teu e-mail",
-    "Login.Label.Password": "Rakinmapu",
-    "Login.Placeholder.Password": "Eymi mülen teu rakinmapu",
-    "Login.Button.Login": "Wüñolün",
-    "Login.Button.Signin": "Trawünme",
-    "Login.Button.ForgotPassword": "Ñi rakinmapu elañmafi",
-    "Login.Button.DarkMode": "Pewma külen müleyin",
+  "Start.StartNewExperience": "Eymi müley kiñe küpan trawün",
 
-    "WelcomePage.Title.Wellcome": "¡Tüfachi mülenmi RegistroApp!",
+  "Ingreso.Tema": "Trawün",
+  "Ingreso.Titulo": "Eymi keyu mülelu",
+  "Ingreso.AVA": "AVA",
+  "Ingreso.Cuenta": "Küpai",
+  "Ingreso.Placeholder.Cuenta": "Kay: Jperez",
+  "Ingreso.Contrasena": "Wüño",
+  "Ingreso.Placeholder.Contrasena": "Kay: 123456",
+  "Ingreso.BotonIngresar": "Eymi keyu",
+  "Ingreso.OlvideContrasena": "Wümümü ñi Wüño",
+  "Ingreso.RutaDuoc": "Raku DUOC mew",
 
-    "HomePage.Button.Wellcome": "Wüña",
-    "HomePage.Button.Scan": "Wütran",
-    "HomePage.Button.Dinosaur": "Tüfachi Chod",
-    "HomePage.Button.Forum": "Trapu",
+  "Welcome": {
+    "TituloSistema": "DUOC Tüfachi Kimeltuwün",
+    "Bienvenido": "Tüfachi!"
+  },
 
-    "ThemePage.Label.ColorTheme": "Dugün de kolor:",
-    "ThemePage.Color.Light": "Külfün",
-    "ThemePage.Color.Dark": "Pewma",
-    "ThemePage.Color.Green": "Karü",
-    "ThemePage.Color.Red": "Kelü",
-    "ThemePage.Color.Facebook": "Facebook",
-    "ThemePage.Color.Instagram": "Instagram",
-    "ThemePage.Color.Duoc": "DUOC",
-    
-    "ThemePage.Button.Primary": "Tüfachi Kutral",
-    "ThemePage.Button.Secondary": "Epü Kutral",
-    "ThemePage.Button.Tertiary": "Küla Kutral",
-    "ThemePage.Button.Success": "Kutral Mew",
-    "ThemePage.Button.Warning": "Kutral Kuifi",
-    "ThemePage.Button.Danger": "Kutral Püñeñ",
-    "ThemePage.Button.Light": "Kutral Külfün",
-    "ThemePage.Button.Dark": "Kutral Pewma",
-    "ThemePage.Button.Home": "Wüña",
-    "ThemePage.Button.Logout": "Tuway",
+  "HomePage.Button.Wellcome": "Wüña",
+  "HomePage.Button.Scan": "Wütran",
+  "HomePage.Button.Dinosaur": "Tüfachi Chod",
+  "HomePage.Button.Forum": "Trapu",
 
-    "ThemePage.Card.Title": "Tüfachi Rakin Tarjeta",
-    "ThemePage.Card.Subtitle": "Epü Rakin Tarjeta",
-    "ThemePage.Card.Content": "Tüfachi mülen rakin tarjetan. Eymü tayüwme kolores tami tarjeta ka mülen rakin.",
-    
-    "ThemePage.List.Title": "Listan",
-    "ThemePage.List.Item1": "Kiñe Wigkaz Ñi Listan",
-    "ThemePage.List.Item2": "Epü Wigkaz Ñi Listan",
-    "ThemePage.List.Item3": "Küla Wigkaz Ñi Listan",
-    
-    "ThemePage.Calendar.Title": "Küdaw Tüfachi",
-    
-    "ThemePage.Form.Title": "Trawün ka Eymi Ingresun",
-    "ThemePage.Form.NameLabel": "Wüñam",
-    "ThemePage.Form.NamePlaceholder": "Eymi mülen teu wüñam",
-    "ThemePage.Form.DescriptionLabel": "Püllün",
-    "ThemePage.Form.DescriptionPlaceholder": "Eymi mülen ta püllün...",
-    "ThemePage.Form.ToggleLabel": "Külfünon notificaciones",
-    "ThemePage.Form.CheckboxLabel": "Amun nien küme alka müleyfi"
+  "ThemePage.Label.ColorTheme": "Dugün de kolor:",
+  "ThemePage.Color.Light": "Külfün",
+  "ThemePage.Color.Dark": "Pewma",
+  "ThemePage.Color.Green": "Karü",
+  "ThemePage.Color.Red": "Kelü",
+  "ThemePage.Color.Facebook": "Facebook",
+  "ThemePage.Color.Instagram": "Instagram",
+  "ThemePage.Color.Duoc": "DUOC",
+
+  "ThemePage.Button.Primary": "Tüfachi Kutral",
+  "ThemePage.Button.Secondary": "Epü Kutral",
+  "ThemePage.Button.Tertiary": "Küla Kutral",
+  "ThemePage.Button.Success": "Kutral Mew",
+  "ThemePage.Button.Warning": "Kutral Kuifi",
+  "ThemePage.Button.Danger": "Kutral Püñeñ",
+  "ThemePage.Button.Light": "Kutral Külfün",
+  "ThemePage.Button.Dark": "Kutral Pewma",
+  "ThemePage.Button.Home": "Wüña",
+  "ThemePage.Button.Logout": "Tuway",
+
+  "ThemePage.Card.Title": "Tüfachi Rakin Tarjeta",
+  "ThemePage.Card.Subtitle": "Epü Rakin Tarjeta",
+  "ThemePage.Card.Content": "Tüfachi mülen rakin tarjetan. Eymü tayüwme kolores tami tarjeta ka mülen rakin.",
+
+  "ThemePage.List.Title": "Listan",
+  "ThemePage.List.Item1": "Kiñe Wigkaz Ñi Listan",
+  "ThemePage.List.Item2": "Epü Wigkaz Ñi Listan",
+  "ThemePage.List.Item3": "Küla Wigkaz Ñi Listan",
+
+  "ThemePage.Calendar.Title": "Küdaw Tüfachi",
+
+  "ThemePage.Form.Title": "Trawün ka Eymi Ingresun",
+  "ThemePage.Form.NameLabel": "Wüñam",
+  "ThemePage.Form.NamePlaceholder": "Eymi mülen teu wüñam",
+  "ThemePage.Form.DescriptionLabel": "Püllün",
+  "ThemePage.Form.DescriptionPlaceholder": "Eymi mülen ta püllün...",
+  "ThemePage.Form.ToggleLabel": "Külfünon notificaciones",
+  "ThemePage.Form.CheckboxLabel": "Amun nien küme alka müleyfi",
+
+  "MisDatos": {
+    "Titulo": "Küpa Wejxu",
+    "Cuenta": "Küpai",
+    "Placeholder": {
+      "Cuenta": "Kay: atorres",
+      "Nombre": "Kay: Ana",
+      "Apellido": "Kay: Torres",
+      "Correo": "Kay: atorres@duocuc.cl",
+      "Direccion": "San Luis 234, La Florida",
+      "PreguntaSecreta": "Kay: ¿Chumgechi feypi küpal meu?",
+      "RespuestaSecreta": "Kay: metawe",
+      "Educacion": "Elige küme",
+      "Contrasena": "Kay: 123456",
+      "ConfirmarContrasena": "Kay: 123456"
+    },
+    "Nombre": "Küpa",
+    "Apellido": "Rakin",
+    "Correo": "E-mail",
+    "Direccion": "Rüpü",
+    "PreguntaSecreta": "Wechalwe Küpa",
+    "RespuestaSecreta": "Wechalwe Küpa",
+    "Educacion": "Kimün",
+    "FechaNacimiento": "Pücha Kvzamen",
+    "Aceptar": "Kvzawtun",
+    "Cancelar": "Weza",
+    "Contrasena": "Wechalwe",
+    "ConfirmarContrasena": "Wechalwe Kvizugeam",
+    "GuardarDatos": "Kvzugen Tüfachi"
+  },
+
+  "Miclase": {
+    "Titulo": "Ñi Mew",
+    "Sede": "Püle",
+    "Sigla": "Ñamün",
+    "Seccion": "Antü",
+    "Asignatura": "Pewma",
+    "Profesor": "Ñi pu domo",
+    "Dia": "Ñamün",
+    "BloqueInicio": "Ñamün Fvta",
+    "BloqueTermino": "Ñamün Püle",
+    "Inicio": "Ñamün",
+    "Termino": "Püle",
+    "EscanearQR": "¡Ñamün küzawün QR!"
+  },
+
+  "Foro": {
+    "GestionPublicaciones": "Ñi Mew ñamün",
+    "Titulo": "Ñamün",
+    "Descripcion": "Ñamün tüfachi",
+    "IngreseTitulo": "Ñamün mew ruka",
+    "EscribeContenido": "Ñamün zomo",
+    "Limpiar": "Ñamün ka mapu",
+    "Guardar": "Ñamün",
+    "Actualizar": "Ñamün ka füllñü",
+    "PublicacionesRecientes": "Ñamün püyün",
+    "PublicacionNumero": "Ñamün #"
+  },
+
+  "CodigoQR": {
+    "DetenerEscaneo": "Ñamün küzawün QR"
+  },
+
+  "RespuestaCorrecta": {
+    "Titulo": "Ñi Küzawün Ñi Ñamün!",
+    "Contraseña": "Ñi Ñamün Ñamün:",
+    "Regresar": "Ñamün ka Ñi Mapu"
+  },
+
+  "RespuestaIncorrecta": {
+    "Titulo": "Ñi Küzawün Ñi Ñamün",
+    "Incorrecto": "Ñi Ñamün küzawün",
+    "Intentar": "Ñi Ñamün küzawün",
+    "Regresar": "Ñamün ka Ñi Mapu"
+  },
+
+  "Miruta": {
+    "Titulo": {
+      "Mapa": "Mapa"
+    },
+    "Boton": {
+      "Duoc": "DUOC",
+      "Aqui": "Inchiñ",
+      "Ruta": "Rupi"
+    }
+  },
+
+  "Correo": {
+    "Titulo": {
+      "SistemaAsistencia": "DUOC Küpan Ñamkülen",
+      "RecuperarContrasena": "Nütramkan Tayin Rüpü"
+    },
+    "Paso1": {
+      "IngresarCorreo": "Paso 1: Tayin E-mail"
+    },
+    "Input": {
+      "IngresarCorreo": "Tayin e-mail",
+      "Placeholder": "Kuyfi: jperez@duocuc.cl"
+    },
+    "Boton": {
+      "RecuperarContrasena": "Nütramkan Tayin Rüpü"
+    },
+    "Link": {
+      "IniciarSesion": "Wüño Mogen"
+    }
+  },
+
+  "Pregunta": {
+    "Titulo": {
+      "SistemaAsistencia": "DUOC Küpan Ñamkülen",
+      "RecuperarContrasena": "Nütramkan Tayin Rüpü"
+    },
+    "Paso2": {
+      "PreguntaSecreta": "Paso 2: Nütramkan kiñe pytal."
+    },
+    "Input": {
+      "IngresarRespuesta": "Eymi nankiñ kiñe tañi pytal",
+      "Placeholder": "Eymi pürüm tañi pytal"
+    },
+    "Boton": {
+      "RecuperarContrasena": "Nütramkan Tayin Rüpü"
+    },
+    "Link": {
+      "IniciarSesion": "Wüño Mogen"
+    }
+  }
 }
