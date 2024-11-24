@@ -1,0 +1,98 @@
+<ion-header>
+  <ion-toolbar class="duoc-bg">
+    <div slot="start" class="ion-margin">
+      <ion-icon name="chevron-back-outline" (click)="goBack()" size="large"></ion-icon>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="color-fondo" [fullscreen]="true">
+  <br>
+  <h3 class="ion-text-center" style="color: white">{{ 'Registrarme.Titulo' | translate }}</h3>
+  <ion-card class="caja-credenciales">
+    <div class="ion-padding-horizontal">
+      <ion-item #itemCuenta class="box-color">
+        <ion-input [(ngModel)]="usuario.userName"
+            label="{{ 'Registrarme.Cuenta' | translate }}" labelPlacement="floating"
+            placeholder="{{ 'Registrarme.Placeholder.Cuenta' | translate }}" style="color: white;"></ion-input>
+      </ion-item>
+      <ion-item #itemNombre class="box-color">
+        <ion-input [(ngModel)]="usuario.firstName"
+            label="{{ 'Registrarme.Nombre' | translate }}" labelPlacement="floating"
+            placeholder="{{ 'Registrarme.Placeholder.Nombre' | translate }}" style="color: white;"></ion-input>
+      </ion-item>
+      <ion-item #itemApellido class="box-color">
+        <ion-input [(ngModel)]="usuario.lastName"
+            label="{{ 'Registrarme.Apellido' | translate }}" labelPlacement="floating"
+            placeholder="{{ 'Registrarme.Placeholder.Apellido' | translate }}" style="color: white;"></ion-input>
+      </ion-item>
+      <ion-item #itemCorreo class="box-color">
+        <ion-input [(ngModel)]="usuario.email"
+            label="{{ 'Registrarme.Correo' | translate }}" labelPlacement="floating"
+            placeholder="{{ 'Registrarme.Placeholder.Correo' | translate }}" style="color: white;"></ion-input>
+      </ion-item>
+      <ion-item #itemDireccion class="box-color">
+        <ion-input [(ngModel)]="usuario.address"
+            label="{{ 'Registrarme.Direccion' | translate }}" labelPlacement="floating"
+            placeholder="{{ 'Registrarme.Placeholder.Direccion' | translate }}" style="color: white;"></ion-input>
+      </ion-item>
+      <ion-item #itemPregunta class="box-color">
+        <ion-input [(ngModel)]="usuario.secretQuestion"
+            label="{{ 'Registrarme.PreguntaSecreta' | translate }}" labelPlacement="floating"
+            placeholder="{{ 'Registrarme.Placeholder.PreguntaSecreta' | translate }}" style="color: white;"></ion-input>
+      </ion-item>
+      <ion-item #itemRespuesta class="box-color">
+        <ion-input [(ngModel)]="usuario.secretAnswer"
+            label="{{ 'Registrarme.RespuestaSecreta' | translate }}" labelPlacement="floating"
+            placeholder="{{ 'Registrarme.Placeholder.RespuestaSecreta' | translate }}" style="color: white;"></ion-input>
+      </ion-item>
+      <ion-item #itemEducacion class="box-color">
+        <ion-label style="color: white;">{{ 'Registrarme.Educacion' | translate }}</ion-label>
+        <ion-select placeholder="{{ 'Registrarme.Placeholder.Educacion' | translate }}" position="floating"
+            [(ngModel)]="usuario.educationalLevel!.id" style="color: whitesmoke;">
+          <ion-select-option *ngFor="let nivelEducacional of listaNivelesEducacionales" 
+            [value]="nivelEducacional.id">
+              {{nivelEducacional.name}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item class="box-color">
+        <ion-label style="color: white;">{{ 'Registrarme.FechaNacimiento' | translate }}</ion-label>
+        <ion-input 
+          readonly 
+          [value]="usuario.dateOfBirth ? (usuario.dateOfBirth | date: 'dd/MM/yyyy') : ''" 
+          (click)="toggleDatePicker()"
+          style="color: whitesmoke;">
+        </ion-input>
+      </ion-item>
+      <div *ngIf="showDatePicker" class="date-picker">
+        <div>
+          <ion-datetime  
+            [(ngModel)]="tempDate" 
+            presentation="date" 
+            (ionChange)="onFechaNacimientoChange($event)" 
+            (ionCancel)="onFechaNacimientoCancel()"
+            style="color: whitesmoke;">
+          </ion-datetime>
+        </div>
+        <ion-button expand="full" shape="round" (click)="onFechaNacimientoConfirm()">{{ 'Registrarme.Aceptar' | translate }}</ion-button>
+        <ion-button expand="full" shape="round" (click)="onFechaNacimientoCancel()">{{ 'Registrarme.Cancelar' | translate }}</ion-button>
+      </div>
+      <ion-item #itemPassword class="box-color">
+        <ion-input style="color: white;" [(ngModel)]="usuario.password" labelPlacement="floating" type="password" 
+            label="{{ 'Registrarme.Contrasena' | translate }}" placeholder="{{ 'Registrarme.Placeholder.Contrasena' | translate }}"></ion-input>
+      </ion-item>
+      <ion-item #itemPassword2 class="box-color">
+        <ion-input style="color: white;" [(ngModel)]="usuario.password" labelPlacement="floating" type="password" 
+            label="{{ 'Registrarme.ConfirmarContrasena' | translate }}" placeholder="{{ 'Registrarme.Placeholder.ConfirmarContrasena' | translate }}"></ion-input>
+      </ion-item>
+      <div class="div-button" style="margin-bottom: 5px;">
+        <ion-button (click)="guardarUsuario()" expand="full" shape="round">
+          <ion-icon slot="start" name="save"></ion-icon>
+          {{ 'Registrarme.GuardarDatos' | translate }}
+        </ion-button>
+      </div>
+    </div>
+  </ion-card>
+  <br>
+</ion-content>

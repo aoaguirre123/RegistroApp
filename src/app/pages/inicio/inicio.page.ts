@@ -8,6 +8,7 @@ import { FooterComponent } from 'src/app/components/footer/footer.component';
 import { WelcomeComponent } from 'src/app/components/welcome/welcome.component';
 import { MisDatosComponent } from 'src/app/components/misdatos/misdatos.component';
 import { ForoComponent } from 'src/app/components/foro/foro.component';
+import { UsuariosComponent } from 'src/app/components/usuarios/usuarios.component';
 import { ScannerService } from 'src/app/services/scanner.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { Capacitor } from '@capacitor/core';
@@ -31,7 +32,8 @@ import { Asistencia } from 'src/app/model/asistencia';
     ForoComponent,
     MisDatosComponent,
     CodigoqrComponent,
-    MiclaseComponent
+    MiclaseComponent,
+    UsuariosComponent
 ]
 })
 export class InicioPage {

@@ -51,6 +51,19 @@ export class DatabaseService {
     'Providencia',
     'default-image.jpg');
 
+  testUser4 = User.getNewUsuario(
+    'admin',
+    'admin@duocuc.cl',
+    '1111',
+    '¿Cuál es tu deporte favorito?',
+    'futbol',
+    'Jorge',
+    'Lopez',
+    EducationalLevel.findLevel(6)!,
+    new Date(2000, 3, 25),
+    'Santiago',
+    'default-image.jpg');
+
   userUpgrades = [
     {
       toVersion: 1,
@@ -123,6 +136,11 @@ export class DatabaseService {
       const user3 = await this.readUser(this.testUser3.userName);
       if (!user3) {
         await this.saveUser(this.testUser3);
+      }
+
+      const user4 = await this.readUser(this.testUser4.userName);
+      if (!user4) {
+        await this.saveUser(this.testUser4);
       }
   
     } catch (error) {
@@ -249,18 +267,18 @@ export class DatabaseService {
     try {
       const q = 'SELECT * FROM USER WHERE userName=?;';
       const rows = (await this.db.query(q, [userName])).values;
-      return rows? this.rowToUser(rows[0]) : undefined;
+      return Array.isArray(rows) && rows.length > 0 ? this.rowToUser (rows[0]) : undefined;
     } catch (error) {
-      showAlertError('DataBaseService.findUserByEmail', error);
+      showAlertError('DataBaseService.findUserByUserName', error); // Corrección del nombre
       return undefined;
     }
-  }
+}
 
   async findUserByEmail(email: string): Promise<User | undefined> {
     try {
       const q = 'SELECT * FROM USER WHERE email=?;';
       const rows = (await this.db.query(q, [email])).values;
-      return rows? this.rowToUser(rows[0]) : undefined;
+      return Array.isArray(rows) && rows.length > 0 ? this.rowToUser (rows[0]) : undefined;
     } catch (error) {
       showAlertError('DataBaseService.findUserByEmail', error);
       return undefined;

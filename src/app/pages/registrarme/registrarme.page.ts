@@ -10,15 +10,15 @@ import { APIClientService } from 'src/app/services/apiclient.service';
 import { EducationalLevel } from 'src/app/model/educational-level';
 import { showToast } from 'src/app/tools/message-functions';
 import { addIcons } from 'ionicons';
-import { save } from 'ionicons/icons';
+import { save, chevronBackOutline } from 'ionicons/icons';
 import { LanguageComponent } from 'src/app/components/language/language.component';
 import { TranslateModule } from '@ngx-translate/core';
-
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-misdatos',
-  templateUrl: './misdatos.component.html',
-  styleUrls: ['./misdatos.component.scss'],
+  selector: 'app-registrarme',
+  templateUrl: './registrarme.page.html',
+  styleUrls: ['./registrarme.page.scss'],
   standalone: true,
   imports: [
     CommonModule,
@@ -29,11 +29,10 @@ import { TranslateModule } from '@ngx-translate/core';
     TranslateModule
   ]
 })
-export class MisDatosComponent{
-
+export class RegistrarmePage {
+  
   usuario: User = new User();
   usuarios: User[] = [];
-  publicaciones: Post[] = [];
   listaNivelesEducacionales: EducationalLevel[] = EducationalLevel.getLevels();
   showDatePicker: boolean = false;
   tempDate: string;
@@ -41,7 +40,7 @@ export class MisDatosComponent{
   constructor(
     private bd: DatabaseService,
     private auth: AuthService,
-    private api: APIClientService) 
+    private router: Router) 
   { 
     this.bd.userList.subscribe((usuarios) => {
       if (usuarios) {
@@ -51,14 +50,14 @@ export class MisDatosComponent{
     this.auth.readAuthUser().then((usuario) => {
       if (usuario) {
         this.usuario = usuario;
+        console.log(this.usuario);
       }
     });
-    addIcons({ save });
+    addIcons({ save, chevronBackOutline });
     this.tempDate = this.usuario.dateOfBirth ? this.usuario.dateOfBirth.toISOString() : '';
   }
 
   async guardarUsuario() {
-
     const camposRequeridos = [
       { campo: this.usuario.userName, mensaje: 'El usuario debe tener un nombre de usuario' },
       { campo: this.usuario.firstName, mensaje: 'El usuario debe tener un nombre' },
@@ -79,30 +78,28 @@ export class MisDatosComponent{
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(this.usuario.email)) {
-      showToast('El correo electrónico no es válido');
-      return;
+        showToast('El correo electrónico no tiene un formato válido');
+        return;
     }
     
     try {
       // Verificar si el nombre de usuario ya existe
-      // const existeUsuario = await this.bd.findUserByUserName(this.usuario.userName);
-      // if (existeUsuario) {
-      //     showToast('El nombre de usuario ya está en uso. Por favor, elige otro.');
-      //     return;
-      // }
+      const existeUsuario = await this.bd.findUserByUserName(this.usuario.userName);
+      if (existeUsuario) {
+          showToast('El nombre de usuario ya está en uso. Por favor, elige otro.');
+          return;
+      }
 
       // Guardar el usuario si no existe
+      console.log(this.usuario);
       await this.bd.saveUser(this.usuario);
       this.auth.saveAuthUser(this.usuario);
-      showToast('Usuario actualizado con éxito');
+      showToast('Usuario registrado con éxito');
+      this.router.navigate(['/inicio']);
     } catch (error) {
-        console.error('Error al actualizar el usuario:', error);
-        showToast('Ocurrió un error al actualizar el usuario. Intenta nuevamente.');
+        console.error('Error al registrar el usuario:', error);
+        showToast('Ocurrió un error al registrar el usuario. Intenta nuevamente.');
     }
-    this.bd.saveUser(this.usuario);
-    this.auth.saveAuthUser(this.usuario);
-    showToast('El usuario fue actualizado correctamente');
-
   }
 
   toggleDatePicker() {
@@ -127,4 +124,7 @@ export class MisDatosComponent{
     this.showDatePicker = false; // Oculta el calendario si se cancela
   }
 
+  goBack() {
+    this.router.navigate(['/ingreso']);
+  }
 }

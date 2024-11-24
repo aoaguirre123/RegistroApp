@@ -3,7 +3,7 @@
 
     <div slot="end">
 
-      <ion-button (click)="sendClickEvent('scan')" size="small" fill="clear">
+      <ion-button (click)="sendClickEvent('scan')" size="small" fill="clear" *ngIf="this.user.userName !== 'admin'">
         <ion-icon name="qr-code-outline" color="light"></ion-icon>
       </ion-button>
 

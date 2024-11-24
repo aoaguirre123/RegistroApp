@@ -32,14 +32,15 @@
 
       <ion-item class="cuenta-box">
         <ion-input [(ngModel)]="correo" labelPlacement="floating" 
-                   label="{{ 'Ingreso.Cuenta' | translate }}" 
-                   placeholder="{{ 'Ingreso.Placeholder.Cuenta' | translate }}">
+        label="{{ 'Ingreso.Cuenta' | translate }}" 
+        placeholder="{{ 'Ingreso.Placeholder.Cuenta' | translate }}">
         </ion-input>
       </ion-item>
       <ion-item class="password-box">
-        <ion-input [(ngModel)]="password" labelPlacement="floating" type="password" 
-                   label="{{ 'Ingreso.Contrasena' | translate }}" 
-                   placeholder="{{ 'Ingreso.Placeholder.Contrasena' | translate }}">
+        <ion-input 
+        [(ngModel)]="password" labelPlacement="floating" type="password" 
+        label="{{ 'Ingreso.Contrasena' | translate }}" 
+        placeholder="{{ 'Ingreso.Placeholder.Contrasena' | translate }}">
         </ion-input>
       </ion-item>
 
@@ -47,6 +48,10 @@
 
     <ion-button (click)="login()" class="boton-ingresar" shape="round" style="margin-top: 15px;">
       <ion-label>{{ 'Ingreso.BotonIngresar' | translate }}</ion-label>
+    </ion-button>
+
+    <ion-button (click)="signUp()" class="boton-ingresar" shape="round" style="margin-top: 15px;">
+      <ion-label>{{ 'Ingreso.BotonRegistrarme' | translate }}</ion-label>
     </ion-button>
 
     <ion-card-content style="text-align: center; margin-top: 10px; color: #2f41de;">

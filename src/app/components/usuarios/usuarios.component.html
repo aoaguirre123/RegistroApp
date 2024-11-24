@@ -1,0 +1,27 @@
+<ion-content class="color-fondo">
+  <a id="topOfPage" href="#topOfPage"></a>
+
+  <!-- Lista de usuarios -->
+  <br><br>
+  
+  <ion-list>
+    <h2 class="ion-text-center">{{ 'Usuarios.Titulo' | translate }}</h2>
+    <ion-card *ngFor="let user of users" style="background-color: #042648;">
+      <ion-card-header>
+        <h6>{{ user.firstName }} {{ user.lastName }} - {{ user.userName }}</h6>
+      </ion-card-header>
+      <ion-card-content>
+        <h4 class="titulo-mensaje">{{ user.email }}</h4>
+      </ion-card-content>
+      <!-- Contenedor para alinear los botones horizontalmente a la derecha -->
+      <div style="display: flex; justify-content: flex-end; gap: 10px; margin-right: 16px;">
+        <!-- boton de eliminar -->
+        <ion-fab-button *ngIf="user.userName !== 'admin'" size="small" color="danger" (click)="deleteUser(user)">
+          <ion-icon name="trash-outline"></ion-icon>
+        </ion-fab-button>
+        <br *ngIf="user.userName === 'admin'">
+      </div>
+    </ion-card>
+  </ion-list>
+  <br>
+</ion-content>

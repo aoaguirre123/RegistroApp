@@ -60,5 +60,9 @@ export class IngresoPage implements ViewWillEnter {
     this.authService.login(this.correo, this.password);
   }
 
+  signUp() {
+    this.router.navigate(['/registrarme']);
+  }
+
 
 }

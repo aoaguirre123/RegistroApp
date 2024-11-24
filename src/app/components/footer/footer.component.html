@@ -13,12 +13,16 @@
         <ion-icon name="person-circle-outline" color="light" size="large"></ion-icon>
       </ion-segment-button>
 
-      <ion-segment-button value="miclase">
+      <ion-segment-button value="miclase" *ngIf="this.user.userName !== 'admin'">
         <ion-icon name="book" color="light"></ion-icon>
       </ion-segment-button>
       
       <ion-segment-button value="foro">
         <ion-icon name="chatbubbles-sharp" color="light"></ion-icon>
+      </ion-segment-button>
+
+      <ion-segment-button value="usuarios" *ngIf="this.user.userName === 'admin'">
+        <ion-icon name="people" color="light"></ion-icon>
       </ion-segment-button>
 
     </ion-segment>

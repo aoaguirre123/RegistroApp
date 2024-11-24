@@ -4,7 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { IonFooter, IonToolbar, IonSegment, IonSegmentButton, IonIcon } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { home, chatbubblesSharp, book, personCircleOutline } from 'ionicons/icons';
+import { home, chatbubblesSharp, book, personCircleOutline, people } from 'ionicons/icons';
+import { AuthService } from 'src/app/services/auth.service';
+import { User } from 'src/app/model/user';
 
 @Component({
   selector: 'app-footer',
@@ -22,9 +24,17 @@ export class FooterComponent {
 
   selectedButton = 'welcome';
   @Output() footerClick = new EventEmitter<string>();
+  user: User = new User();
 
-  constructor() { 
-    addIcons({home,personCircleOutline,book,chatbubblesSharp});
+  constructor(
+    private auth: AuthService
+  ) { 
+    addIcons({home,personCircleOutline,book,chatbubblesSharp,people});
+    this.auth.authUser.subscribe((user) => {
+      if (user) {
+        this.user = user;
+      }
+    });
   }
 
   sendClickEvent($event: any) {

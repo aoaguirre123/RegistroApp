@@ -17,6 +17,7 @@
   "Ingreso.Contrasena": "Wüño",
   "Ingreso.Placeholder.Contrasena": "Kay: 123456",
   "Ingreso.BotonIngresar": "Eymi keyu",
+  "Ingreso.BotonRegistrarme": "Eymi müley",
   "Ingreso.OlvideContrasena": "Wümümü ñi Wüño",
   "Ingreso.RutaDuoc": "Raku DUOC mew",
 
@@ -97,6 +98,36 @@
     "Contrasena": "Wechalwe",
     "ConfirmarContrasena": "Wechalwe Kvizugeam",
     "GuardarDatos": "Kvzugen Tüfachi"
+  },
+
+  "Registrarme": {
+    "Titulo": "Küpa",
+    "Cuenta": "Küpai",
+    "Placeholder": {
+      "Cuenta": "Kay: atorres",
+      "Nombre": "Kay: Ana",
+      "Apellido": "Kay: Torres",
+      "Correo": "Kay: atorres@duocuc.cl",
+      "Direccion": "San Luis 234, La Florida",
+      "PreguntaSecreta": "Kay: ¿Chumgechi feypi küpal meu?",
+      "RespuestaSecreta": "Kay: metawe",
+      "Educacion": "Elige küme",
+      "Contrasena": "Kay: 123456",
+      "ConfirmarContrasena": "Kay: 123456"
+    },
+    "Nombre": "Küpa",
+    "Apellido": "Rakin",
+    "Correo": "E-mail",
+    "Direccion": "Rüpü",
+    "PreguntaSecreta": "Wechalwe Küpa",
+    "RespuestaSecreta": "Wechalwe Küpa",
+    "Educacion": "Kimün",
+    "FechaNacimiento": "Pücha Kvzamen",
+    "Aceptar": "Kvzawtun",
+    "Cancelar": "Weza",
+    "Contrasena": "Wechalwe",
+    "ConfirmarContrasena": "Wechalwe Kvizugeam",
+    "GuardarDatos": "Kvzugen"
   },
 
   "Miclase": {
@@ -193,5 +224,9 @@
     "Link": {
       "IniciarSesion": "Wüño Mogen"
     }
+  },
+
+  "Usuarios": {
+    "Titulo": "Ñi Mew"
   }
 }

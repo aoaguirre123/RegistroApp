@@ -7,6 +7,7 @@ import { NavController } from '@ionic/angular';
 import { logOutOutline, personCircleOutline, qrCodeOutline } from 'ionicons/icons';
 import { addIcons } from 'ionicons';
 import { AuthService } from 'src/app/services/auth.service';
+import { User } from 'src/app/model/user';
 
 @Component({
   selector: 'app-header',
@@ -23,9 +24,15 @@ import { AuthService } from 'src/app/services/auth.service';
 export class HeaderComponent {
   
   @Output() headerClick = new EventEmitter<string>();
+  user: User = new User();
 
   constructor(private navCtrl: NavController, private authService: AuthService) { 
     addIcons({ logOutOutline, qrCodeOutline, personCircleOutline });
+    this.authService.authUser.subscribe((user) => {
+      if (user) {
+        this.user = user;
+      }
+    });
   }
 
   sendClickEvent(buttonName: string) {

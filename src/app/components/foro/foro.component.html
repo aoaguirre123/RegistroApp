@@ -46,10 +46,12 @@
   
       <!-- Contenedor para alinear los botones horizontalmente a la derecha -->
       <div style="display: flex; justify-content: flex-end; gap: 10px; margin-right: 16px;">
+        <!-- boton de editar -->
         <ion-fab-button *ngIf="post.author === usuarioActual" size="small" color="primary" (click)="editPost(post)">
           <ion-icon name="pencil-outline"></ion-icon>
         </ion-fab-button>
-        <ion-fab-button *ngIf="post.author === usuarioActual" size="small" color="danger" (click)="deletePost(post)">
+        <!-- boton de eliminar -->
+        <ion-fab-button *ngIf="post.author === usuarioActual || user.userName === 'admin'" size="small" color="danger" (click)="deletePost(post)">
           <ion-icon name="trash-outline"></ion-icon>
         </ion-fab-button>
         <br *ngIf="post.author !== usuarioActual">

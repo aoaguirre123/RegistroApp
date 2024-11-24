@@ -22,7 +22,6 @@ export class WelcomeComponent implements AfterViewInit {
     private animationController: AnimationController
   ) { 
     this.auth.authUser.subscribe((user) => {
-      console.log(user);
       if (user) {
         this.user = user;
       }

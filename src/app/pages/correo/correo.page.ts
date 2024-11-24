@@ -5,8 +5,6 @@ import { TranslateModule } from '@ngx-translate/core';
 import { LanguageComponent } from 'src/app/components/language/language.component';
 import { IonicModule } from '@ionic/angular';
 import { NavigationExtras } from '@angular/router';
-import { Usuario } from 'src/app/model/usuario';
-import { User } from 'src/app/model/user';
 import { Router } from '@angular/router';
 import { DatabaseService } from 'src/app/services/database.service';
 import { ToastController } from '@ionic/angular';
@@ -24,7 +22,7 @@ import { ToastController } from '@ionic/angular';
     , IonicModule
     , LanguageComponent  ]
 })
-export class CorreoPage implements OnInit {
+export class CorreoPage {
   email: string;
   constructor(
     private router: Router,
@@ -52,31 +50,5 @@ export class CorreoPage implements OnInit {
   navegarIngreso() {
     this.router.navigate(['/ingreso']);
   }
-
-  
-
-  ngOnInit() {
-  }
-
-  // public ingresarPaginaValidarRespuestaSecreta(): void {
-  //   const usuario = new Usuario();
-  //   const usuarioEncontrado = usuario.buscarUsuarioPorCorreo(this.correo);
-  //   if (!usuarioEncontrado) {
-  //     this.router.navigate(['/incorrecto']);
-  //   }
-  //   else {
-  //     const navigationExtras: NavigationExtras = {
-  //       state: {
-  //         usuario: usuarioEncontrado
-  //       }
-  //     };
-  //     this.router.navigate(['/pregunta'], navigationExtras);
-  //   }
-  // }
-
-  //verificarCorreo(){
-    //const usuario = this.databaseService.findUserByEmail(this.correo)
-  //} 
-  
 
 }
